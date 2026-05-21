@@ -2,3 +2,4 @@ apps.py
 core/__pycache__
 .vscode/
 pages/__pycache__
+venv/
