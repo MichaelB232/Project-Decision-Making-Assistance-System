@@ -1,21 +1,6 @@
 import yfinance as yf
 import pandas as pd
-
-IDX_STOCKS = [
-    "BBCA.JK",
-    "BBRI.JK",
-    "BMRI.JK",
-    "BBNI.JK",
-    "TLKM.JK",
-    "ASII.JK",
-    "ICBP.JK",
-    "INDF.JK",
-    "UNVR.JK",
-    "CPIN.JK",
-    "ADRO.JK",
-    "ANTM.JK",
-    "PGAS.JK",
-]
+from core.idx_tickers import IDX_STOCKS
 
 
 def fetch_stock_data(tickerList=IDX_STOCKS):
@@ -51,7 +36,7 @@ def get_price_history(ticker, period="24H"):
     return yf.Ticker(ticker).history(period=period)
 
 
-def fetch_top_gainers(tickerList=IDX_STOCKS, period="1W"):
+def fetch_top_gainers(tickerList=IDX_STOCKS, period="1D"):
     top_gainers = []
     lose_gainers = []
 
@@ -112,9 +97,10 @@ def fetch_top_gainers(tickerList=IDX_STOCKS, period="1W"):
     df_gainers = pd.DataFrame(top_gainers)
     df_losers = pd.DataFrame(lose_gainers)
 
-    return df_gainers.sort_values(
-        by="ChangePct", ascending=False
-    ), df_losers.sort_values(by="ChangePct", ascending=True)
+    return (
+        df_gainers.head(20).sort_values(by="ChangePct", ascending=False),
+        df_losers.head(20).sort_values(by="ChangePct", ascending=True),
+    )
 
 
 df = fetch_top_gainers()

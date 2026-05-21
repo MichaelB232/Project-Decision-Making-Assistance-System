@@ -1,9 +1,6 @@
 import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-import core.data_provider as dp
 from pages.market_overview import show_market_overview
+from pages.portofolio_management import show_portofolio_management
 
 
 # LOAD CSS
@@ -13,7 +10,6 @@ def load_css(file_name):
 
 
 load_css("styles/style.css")
-
 st.set_page_config(
     page_title="IDX Portofolio Intelligence",
     page_icon="📊",
@@ -31,8 +27,6 @@ with st.sidebar:
                     background-clip:text;'>
             IDX Portfolio<br>Management
         </div>
-        <div style='font-size:11px;color:#6b7c99;margin-top:4px;font-family:DM Mono,monospace;
-                    letter-spacing:0.1em;'>AHP-BASED DECISION ENGINE</div>
     </div>
     """,
         unsafe_allow_html=True,
@@ -53,8 +47,9 @@ with st.sidebar:
     st.divider()
 
 
-if page == "Dashboard":
-    pass
+if page == "Portofolio Management":
+    show_portofolio_management()
+
 elif page == "Market Overview":
     show_market_overview()
 elif page == "Portfolio Management":

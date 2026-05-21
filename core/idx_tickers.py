@@ -1,32 +1,48 @@
-LQ45 = [
+IDX_STOCKS = [
+    # Banking
     "BBCA.JK",
     "BBRI.JK",
     "BMRI.JK",
     "BBNI.JK",
+    "BBTN.JK",
+    # Telco & Tower
     "TLKM.JK",
-    "ASII.JK",
+    "ISAT.JK",
+    "MTEL.JK",
+    # Consumer Staples
     "UNVR.JK",
     "ICBP.JK",
     "INDF.JK",
+    # Healthcare & Pharma
     "KLBF.JK",
-    "GGRM.JK",
-    "HMSP.JK",
-    "ANTM.JK",
+    "KAEF.JK",
+    "MERK.JK",
+    "SILO.JK",
+    # Mining & Energy
     "ADRO.JK",
     "PTBA.JK",
     "ITMG.JK",
-    "INCO.JK",
-    "MEDC.JK",
-    "PGAS.JK",
-    "JSMR.JK",
-    "WIKA.JK",
-    "WSKT.JK",
-    "PTPP.JK",
+    "HRUM.JK",
+    "DOID.JK",
+    # Plantation
+    "TAPG.JK",
+    "PALM.JK",
+    # Property & Construction
+    "BSDE.JK",
+    "CTRA.JK",
+    "PWON.JK",
+    "SMRA.JK",
+    "WTON.JK",
+    # Retail & Consumer Discretionary
+    "MAPI.JK",
+    "ACES.JK",
+    "ERAA.JK",
+    # Industrials & Materials
+    "ASII.JK",
     "SMGR.JK",
     "INTP.JK",
-    "CPIN.JK",
-    "JPFA.JK",
-    "MNCN.JK",
-    "SCMA.JK",
-    "EMTK.JK",
+    # Infrastructure & Logistics
+    "BIRD.JK",
+    "ASSA.JK",
+    "SMDR.JK",
 ]

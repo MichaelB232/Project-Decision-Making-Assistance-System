@@ -13,7 +13,10 @@
   --positive: #00d4aa;
   --negative: #ff4d6d;
 }
-
+/* Hide default multipage navigation */
+[data-testid="stSidebarNav"] {
+  display: none;
+}
 html,
 body,
 [class*="css"] {
