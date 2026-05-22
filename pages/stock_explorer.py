@@ -60,7 +60,7 @@ def show_stock_explorer():
         unsafe_allow_html=True,
     )
 
-    # Fundamental metrics
+    # Fundamental Metriks
     st.markdown(
         '<div class="section-header">FUNDAMENTALS</div>', unsafe_allow_html=True
     )
@@ -70,8 +70,8 @@ def show_stock_explorer():
             f1,
             "P/E Ratio",
             (
-                f"{row.get('PE Ratio',np.nan):.1f}x"
-                if pd.notna(row.get("PE Ratio"))
+                f"{row.get('PE_Ratio',np.nan):.1f}x"
+                if pd.notna(row.get("PE_Ratio"))
                 else "—"
             ),
             "",
@@ -98,8 +98,8 @@ def show_stock_explorer():
             f5,
             "Div Yield",
             (
-                f"{row.get('Div Yield',np.nan)*100:.2f}%"
-                if pd.notna(row.get("Div Yield"))
+                f"{row.get('DivYield',np.nan)*100:.2f}%"
+                if pd.notna(row.get("DivYield"))
                 else "—"
             ),
             "",
@@ -123,7 +123,6 @@ def show_stock_explorer():
             )
 
     # Price chart
-
     if not hist.empty and "Close" in hist.columns:
 
         st.markdown(
@@ -153,7 +152,6 @@ def show_stock_explorer():
                 + "<extra></extra>",
             )
         )
-
         # Latest Price Marker
         fig.add_trace(
             go.Scatter(

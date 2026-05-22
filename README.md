@@ -58,9 +58,7 @@ Implements Analytical Hierarchy Process including:
 ```bash
 project/
 │
-├── app.py
-├── style.css
-│
+├── App.py
 ├── core/
 │   ├── ahp_engine.py
 │   ├── chart_utils.py
@@ -71,6 +69,8 @@ project/
 ├── pages/
 │   ├── market_overview.py
 │   └── portofolio_management.py
+├── styles/
+│   └── style.css
 │
 └── README.md
 ```
