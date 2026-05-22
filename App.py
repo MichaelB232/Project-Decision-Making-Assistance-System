@@ -1,6 +1,7 @@
 import streamlit as st
 from pages.market_overview import show_market_overview
 from pages.portofolio_management import show_portofolio_management
+from pages.stock_explorer import show_stock_explorer
 
 
 # LOAD CSS
@@ -35,10 +36,9 @@ with st.sidebar:
     page = st.radio(
         label="Navigate",
         options=[
-            "📊  Dashboard",
             "📈  Market Overview",
+            "🔍  Stock Explorer",
             "💼  Portfolio Management",
-            "📐  AHP Explained",
         ],
         label_visibility="collapsed",
     )
@@ -52,7 +52,7 @@ if page == "Portofolio Management":
 
 elif page == "Market Overview":
     show_market_overview()
-elif page == "Portfolio Management":
-    pass
+elif page == "Stock Explorer":
+    show_stock_explorer()
 else:
-    pass
+    st.stop()

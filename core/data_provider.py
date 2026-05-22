@@ -1,8 +1,10 @@
 import yfinance as yf
 import pandas as pd
 from core.idx_tickers import IDX_STOCKS
+import streamlit as st
 
 
+@st.cache_data(ttl=1800, show_spinner=False)
 def fetch_stock_data(tickerList=IDX_STOCKS):
     all_data = []
     try:
@@ -32,10 +34,16 @@ def fetch_stock_data(tickerList=IDX_STOCKS):
 
 
 # asda
-def get_price_history(ticker, period="24H"):
-    return yf.Ticker(ticker).history(period=period)
+@st.cache_data(ttl=1800, show_spinner=False)
+def fetch_price_history(ticker: str, period: str = "1y"):
+    try:
+        df = yf.download(ticker, period=period, progress=False, auto_adjust=True)
+        return df
+    except Exception:
+        return pd.DataFrame()
 
 
+@st.cache_data(ttl=1800, show_spinner=False)
 def fetch_top_gainers(tickerList=IDX_STOCKS, period="1D"):
     top_gainers = []
     lose_gainers = []
@@ -101,7 +109,3 @@ def fetch_top_gainers(tickerList=IDX_STOCKS, period="1D"):
         df_gainers.head(20).sort_values(by="ChangePct", ascending=False),
         df_losers.head(20).sort_values(by="ChangePct", ascending=True),
     )
-
-
-df = fetch_top_gainers()
-print(df)

@@ -4,6 +4,7 @@ import core.data_provider as dp
 import pandas as pd
 from core.formatters import format_change, color_change
 from core.chart_utils import dark_fig
+import plotly.graph_objects as go
 
 
 def show_market_overview():
@@ -150,7 +151,7 @@ def show_market_overview():
     )
 
     sector_counts = df["Sector"].value_counts()
-    fig, ax = dark_fig(figsize=(10, 3.5))
+
     colors = [
         "#00d4aa",
         "#0097ff",
@@ -161,24 +162,32 @@ def show_market_overview():
         "#14b8a6",
         "#f97316",
     ]
-    bars = ax.barh(
-        sector_counts.index,
-        sector_counts.values,
-        color=[colors[i % len(colors)] for i in range(len(sector_counts))],
-        height=0.6,
-    )
-    ax.set_xlabel("Number of Stocks")
-    ax.invert_yaxis()
-    for bar, val in zip(bars, sector_counts.values):
-        ax.text(
-            bar.get_width() + 0.05,
-            bar.get_y() + bar.get_height() / 2,
-            str(val),
-            va="center",
-            color="#6b7c99",
-            fontsize=10,
+
+    fig = go.Figure()
+
+    fig.add_trace(
+        go.Bar(
+            x=sector_counts.values,
+            y=sector_counts.index,
+            orientation="h",
+            marker=dict(
+                color=[colors[i % len(colors)] for i in range(len(sector_counts))]
+            ),
+            text=sector_counts.values,
+            textposition="outside",
+            hovertemplate="<b>%{y}</b><br>" + "Stocks: %{x}" + "<extra></extra>",
         )
-    ax.grid(axis="x", color="#1e2d45", linewidth=0.5)
-    ax.set_axisbelow(True)
-    fig.tight_layout()
-    st.pyplot(fig)
+    )
+
+    fig.update_layout(
+        height=450,
+        template="plotly_dark",
+        paper_bgcolor="#0b1220",
+        plot_bgcolor="#0b1220",
+        margin=dict(l=20, r=20, t=20, b=20),
+        xaxis=dict(title="Number of Stocks", showgrid=True, gridcolor="#1e2d45"),
+        yaxis=dict(title="", autorange="reversed"),
+        showlegend=False,
+    )
+
+    st.plotly_chart(fig, use_container_width=True)
