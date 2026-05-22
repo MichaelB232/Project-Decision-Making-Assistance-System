@@ -69,6 +69,7 @@ project/
 ├── pages/
 │   ├── market_overview.py
 │   └── portofolio_management.py
+│   ├── stock_explorer.py
 ├── styles/
 │   └── style.css
 │
