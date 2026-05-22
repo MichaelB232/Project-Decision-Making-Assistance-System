@@ -50,6 +50,7 @@ Implements Analytical Hierarchy Process including:
 - NumPy
 - Matplotlib
 - Yahoo Finance API (`yfinance`)
+- Plotly 
 
 ---
 
@@ -108,11 +109,12 @@ streamlit run app.py
 # 📦 Requirements
 
 ```txt
-streamlit
-pandas
-numpy
-matplotlib
-yfinance
+streamlit>=1.35.0
+pandas>=2.0.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+yfinance>=0.2.40
+plotly>=6.7.0
 ```
 
 ---
