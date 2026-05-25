@@ -3,6 +3,7 @@ import core.data_provider as dp
 import pandas as pd
 from core.formatters import format_change, color_change
 import plotly.graph_objects as go
+from core.data_provider import IDX_STOCKS
 
 
 def show_market_overview():
@@ -10,7 +11,7 @@ def show_market_overview():
         '<div class="hero-title">IDX Market<br>Overview</div>', unsafe_allow_html=True
     )
     with st.spinner():
-        df = dp.fetch_stock_data()
+        df = dp.fetch_stock_data(IDX_STOCKS)
 
     if df.empty:
         st.error("Can't Fetch data, check your connection")
@@ -98,51 +99,51 @@ def show_market_overview():
 
     st.dataframe(fmt_df.reset_index(drop=True), use_container_width=True, height=480)
 
-    # <--- Gainers and Losers Section ---->
-    col1, col2 = st.columns([10, 1.4])
+    # # <--- Gainers and Losers Section ---->
+    # col1, col2 = st.columns([10, 1.4])
 
-    with col1:
-        st.markdown(
-            "<div class='section-header-2'>Top 20 Stock Gainers</div>",
-            unsafe_allow_html=True,
-        )
+    # with col1:
+    #     st.markdown(
+    #         "<div class='section-header-2'>Top 20 Stock Gainers</div>",
+    #         unsafe_allow_html=True,
+    #     )
 
-    with col2:
-        period = st.selectbox(
-            "", ["1D", "1W", "1M", "1Y"], label_visibility="collapsed", index=0
-        )
+    # with col2:
+    #     period = st.selectbox(
+    #         "", ["1D", "1W", "1M", "1Y"], label_visibility="collapsed", index=0
+    #     )
 
-    with st.spinner():
-        top_gainers, top_losers = dp.fetch_top_gainers(period=period)
+    # with st.spinner():
+    #     top_gainers, top_losers = dp.fetch_top_gainers(period=period)
 
-    top_gainers[period] = top_gainers["ChangePct"]
-    top_gainers.drop(columns=["ChangePct"], inplace=True)
-    top_losers[period] = top_losers["ChangePct"]
-    top_losers.drop(columns=["ChangePct"], inplace=True)
+    # top_gainers[period] = top_gainers["ChangePct"]
+    # top_gainers.drop(columns=["ChangePct"], inplace=True)
+    # top_losers[period] = top_losers["ChangePct"]
+    # top_losers.drop(columns=["ChangePct"], inplace=True)
 
-    # Change the format of the price
-    top_gainers["Price"] = top_gainers["Price"].apply(
-        lambda x: f"Rp {x:,.1f}" if pd.notna(x) and x else "—"
-    )
-    top_losers["Price"] = top_losers["Price"].apply(
-        lambda x: f"Rp {x:,.1f}" if pd.notna(x) and x else "—"
-    )
+    # # Change the format of the price
+    # top_gainers["Price"] = top_gainers["Price"].apply(
+    #     lambda x: f"Rp {x:,.1f}" if pd.notna(x) and x else "—"
+    # )
+    # top_losers["Price"] = top_losers["Price"].apply(
+    #     lambda x: f"Rp {x:,.1f}" if pd.notna(x) and x else "—"
+    # )
 
-    gainers_display = top_gainers.copy()
-    gainers_display = top_gainers.style.map(color_change, subset=[period]).format(
-        {period: format_change}
-    )
+    # gainers_display = top_gainers.copy()
+    # gainers_display = top_gainers.style.map(color_change, subset=[period]).format(
+    #     {period: format_change}
+    # )
 
-    losers_display = top_losers.copy()
-    losers_display = top_losers.style.map(color_change, subset=[period]).format(
-        {period: format_change}
-    )
-    st.dataframe(gainers_display, use_container_width=True, height=480)
+    # losers_display = top_losers.copy()
+    # losers_display = top_losers.style.map(color_change, subset=[period]).format(
+    #     {period: format_change}
+    # )
+    # st.dataframe(gainers_display, use_container_width=True, height=480)
 
-    st.markdown(
-        "<div class='section-header-2'>Top 20 Loser Stock</div>", unsafe_allow_html=True
-    )
-    st.dataframe(losers_display, use_container_width=True, height=480)
+    # st.markdown(
+    #     "<div class='section-header-2'>Top 20 Loser Stock</div>", unsafe_allow_html=True
+    # )
+    # st.dataframe(losers_display, use_container_width=True, height=480)
     # Sector distribution chart
     st.markdown(
         '<div class="section-header">SECTOR DISTRIBUTION</div>', unsafe_allow_html=True

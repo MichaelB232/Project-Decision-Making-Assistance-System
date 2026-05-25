@@ -4,7 +4,7 @@ import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
 from core.data_provider import fetch_stock_data_choosen
-from core.idx_tickers import IDX_STOCKS
+from core.idx_tickers import IDX_STOCKS_dict
 from core.ahp_services import *
 
 
@@ -25,7 +25,9 @@ def show_portofolio_management():
     st.markdown("## 🏦 Step 1 — Pilih Saham")
     st.markdown("Pilih minimal **2** saham yang ingin dibandingkan (maksimal 10).")
 
-    ticker_labels = {f"{t.replace('.JK','')} — {n}": t for t, n in IDX_STOCKS.items()}
+    ticker_labels = {
+        f"{t.replace('.JK','')} — {n}": t for t, n in IDX_STOCKS_dict.items()
+    }
     chosen_labels = st.multiselect(
         "Pilih saham IDX",
         options=list(ticker_labels.keys()),
