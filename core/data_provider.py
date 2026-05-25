@@ -8,14 +8,13 @@ import os
 @st.cache_data(ttl=1800, show_spinner=False)  ## Using CSV
 def fetch_stock_data_choosen(
     tickerList: tuple,
-):  # ← tuple, bukan list (hashable = cacheable)
+):
     CSV_PATH = "data.csv"
 
-    # Kalau CSV ada, filter hanya ticker yang dipilih user
     if os.path.exists(CSV_PATH):
         df = pd.read_csv(CSV_PATH)
         filtered = df[df["Ticker"].isin(tickerList)]
-        # Kalau semua ticker sudah ada di CSV, langsung return
+
         if set(tickerList).issubset(set(df["Ticker"].tolist())):
             return filtered.reset_index(drop=True)
 
