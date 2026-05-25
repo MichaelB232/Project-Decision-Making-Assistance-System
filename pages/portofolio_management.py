@@ -21,22 +21,22 @@ def show_portofolio_management():
         unsafe_allow_html=True,
     )
 
-    # STEP 1
+    # ── STEP 1 : Pilih Saham ──────────────────────────────────────────────────
     st.markdown("## 🏦 Step 1 — Pilih Saham")
+    st.markdown("Pilih minimal **2** saham yang ingin dibandingkan (maksimal 10).")
 
     ticker_labels = {f"{t.replace('.JK','')} — {n}": t for t, n in IDX_STOCKS.items()}
-
     chosen_labels = st.multiselect(
         "Pilih saham IDX",
         options=list(ticker_labels.keys()),
         default=list(ticker_labels.keys())[:5],
         max_selections=10,
+        label_visibility="collapsed",
     )
-
     chosen_tickers = [ticker_labels[lbl] for lbl in chosen_labels]
 
     if len(chosen_tickers) < 2:
-        st.info("Pilih minimal 2 saham")
+        st.info("ℹ️ Pilih minimal 2 saham untuk melanjutkan.")
         st.stop()
 
     # Fetch data
@@ -44,7 +44,7 @@ def show_portofolio_management():
         df_raw = fetch_stock_data_choosen(tuple(chosen_tickers))
 
     if df_raw.empty:
-        st.error("Gagal mengambil data")
+        st.error("Gagal mengambil data saham. Coba lagi.")
         st.stop()
 
     # Tampilkan preview data saham
@@ -85,9 +85,9 @@ def show_portofolio_management():
     )
 
     crit_keys = list(CRITERIA.keys())
-
     crit_labels = {k: CRITERIA[k]["label"] for k in crit_keys}
 
+    # State untuk menyimpan input pairwise
     if "pw_inputs" not in st.session_state:
         st.session_state.pw_inputs = {}
 
@@ -97,6 +97,8 @@ def show_portofolio_management():
         for j in range(i + 1, len(crit_keys))
     ]
 
+    # Tampilkan slider per pasang
+    cols_per_row = 1
     pair_values = {}
 
     for c1, c2 in pairs:
@@ -130,38 +132,74 @@ def show_portofolio_management():
                 unsafe_allow_html=True,
             )
 
-        val = st.select_slider(
-            f"{c1} vs {c2}",
-            options=list(range(-9, 0)) + [1] + list(range(2, 10)),
-            value=1,
-        )
-
-        pair_values[(c1, c2)] = val
-
-    # NORMALISASI INPUT
+    # Build matrix & hitung bobot
     user_inputs_normalized = {}
-
     for (c1, c2), raw in pair_values.items():
-
         if raw < 0:
             user_inputs_normalized[(c1, c2)] = 1 / abs(raw)
-
         elif raw == 1:
             user_inputs_normalized[(c1, c2)] = 1.0
-
         else:
             user_inputs_normalized[(c1, c2)] = float(raw)
 
-    # HITUNG AHP
     crit_matrix = build_criteria_matrix(user_inputs_normalized)
-
     weights, lam_max, ci, cr, is_consistent = ahp_weights(crit_matrix)
 
-    # HASIL BOBOT
-    st.markdown("## 📊 Bobot Kriteria")
+    # Tampilkan hasil bobot kriteria
+    st.markdown("### 📊 Hasil Bobot Kriteria")
+    cr_color, cr_label = gauge_cr(cr)
 
-    fig_weights = go.Figure(go.Bar(x=[crit_labels[k] for k in crit_keys], y=weights))
+    col_cr, col_lam, col_ci = st.columns(3)
+    with col_cr:
+        st.markdown(
+            f"""<div class="metric-card">
+                <div class="metric-label">Consistency Ratio (CR)</div>
+                <div class="metric-value" style="color:{cr_color}">{cr:.4f}</div>
+                <div class="metric-sub">{cr_label}</div>
+            </div>""",
+            unsafe_allow_html=True,
+        )
+    with col_lam:
+        st.markdown(
+            f"""<div class="metric-card">
+                <div class="metric-label">λ Max (Eigenvalue)</div>
+                <div class="metric-value">{lam_max:.4f}</div>
+                <div class="metric-sub">Ideal = {len(crit_keys):.0f}</div>
+            </div>""",
+            unsafe_allow_html=True,
+        )
+    with col_ci:
+        st.markdown(
+            f"""<div class="metric-card">
+                <div class="metric-label">Consistency Index (CI)</div>
+                <div class="metric-value">{ci:.4f}</div>
+                <div class="metric-sub">CR ≤ 0.10 = konsisten</div>
+            </div>""",
+            unsafe_allow_html=True,
+        )
 
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # Bar chart bobot kriteria
+    fig_weights = go.Figure(
+        go.Bar(
+            x=[crit_labels[k] for k in crit_keys],
+            y=weights,
+            marker_color=["#00d4aa", "#0097ff", "#ff6b35", "#a78bfa", "#fbbf24"],
+            text=[f"{w:.1%}" for w in weights],
+            textposition="outside",
+        )
+    )
+    fig_weights.update_layout(
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(color="#e8edf5", family="DM Sans"),
+        yaxis=dict(tickformat=".0%", gridcolor="#1e2d45", showgrid=True),
+        xaxis=dict(showgrid=False),
+        margin=dict(t=20, b=10, l=10, r=10),
+        height=280,
+        showlegend=False,
+    )
     st.plotly_chart(fig_weights, use_container_width=True)
 
     # Tabel bobot kriteria
