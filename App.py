@@ -47,7 +47,7 @@ with st.sidebar:
     st.divider()
 
 
-if page == "Portofolio Management":
+if page == "Portfolio Management":
     show_portofolio_management()
 
 elif page == "Market Overview":
