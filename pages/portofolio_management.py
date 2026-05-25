@@ -3,123 +3,9 @@ import pandas as pd
 import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
-from core.ahp_engine import AHPEngine
-from core.data_provider import fetch_stock_data
+from core.data_provider import fetch_stock_data_choosen
 from core.idx_tickers import IDX_STOCKS
-
-# ─────────────────────────────────────────────
-#  KRITERIA AHP (5 kriteria fundamental)
-# ─────────────────────────────────────────────
-CRITERIA = {
-    "ROE": {
-        "label": "Return on Equity",
-        "benefit": True,
-        "desc": "Semakin tinggi semakin baik",
-    },
-    "DivYield": {
-        "label": "Dividend Yield",
-        "benefit": True,
-        "desc": "Semakin tinggi semakin baik",
-    },
-    "PE_Ratio": {
-        "label": "P/E Ratio",
-        "benefit": False,
-        "desc": "Semakin rendah semakin baik",
-    },
-    "PBV": {
-        "label": "Price to Book Value",
-        "benefit": False,
-        "desc": "Semakin rendah semakin baik",
-    },
-    "Beta": {
-        "label": "Beta (Risiko)",
-        "benefit": False,
-        "desc": "Semakin rendah semakin stabil",
-    },
-}
-
-SAATY_SCALE = {
-    1: "Sama pentingnya",
-    2: "Di antara sama & sedikit lebih penting",
-    3: "Sedikit lebih penting",
-    4: "Di antara sedikit & cukup lebih penting",
-    5: "Cukup lebih penting",
-    6: "Di antara cukup & sangat lebih penting",
-    7: "Sangat lebih penting",
-    8: "Di antara sangat & mutlak lebih penting",
-    9: "Mutlak lebih penting",
-}
-
-
-# ─────────────────────────────────────────────
-#  HELPER
-# ─────────────────────────────────────────────
-def safe_val(v, fallback=0.0):
-    try:
-        f = float(v)
-        return f if (f == f and f is not None) else fallback
-    except Exception:
-        return fallback
-
-
-def build_criteria_matrix(user_inputs: dict) -> np.ndarray:
-    """Build NxN pairwise criteria matrix dari user inputs {(c1,c2): value}."""
-    n = len(CRITERIA)
-    keys = list(CRITERIA.keys())
-    idx = {k: i for i, k in enumerate(keys)}
-    matrix = np.ones((n, n))
-    for (c1, c2), val in user_inputs.items():
-        i, j = idx[c1], idx[c2]
-        v = max(1 / 9, min(9, val))
-        matrix[i][j] = v
-        matrix[j][i] = 1 / v
-    return matrix
-
-
-def ahp_weights(matrix: np.ndarray):
-    """Return (weights, lambda_max, CI, CR, is_consistent)."""
-    engine = AHPEngine()
-    ok, weights, cr = engine.validity_check(matrix)
-    n = matrix.shape[0]
-    norm = matrix / matrix.sum(axis=0)
-    w = norm.mean(axis=1)
-    lam = np.mean(np.dot(matrix, w) / w)
-    ci = (lam - n) / (n - 1)
-    return weights, lam, ci, cr, ok
-
-
-def score_alternatives(df: pd.DataFrame, crit_weights: np.ndarray) -> pd.DataFrame:
-    """Hitung skor AHP tiap saham berdasarkan bobot kriteria."""
-    engine = AHPEngine()
-    crit_keys = list(CRITERIA.keys())
-    n = len(df)
-
-    # Bangun matriks alternatif per kriteria
-    W_alt = np.zeros((n, len(crit_keys)))
-    for ci, crit in enumerate(crit_keys):
-        vals = [safe_val(df.iloc[i][crit]) for i in range(n)]
-        benefit = CRITERIA[crit]["benefit"]
-        mat = engine.build_matrix_alternative(vals, benefit=benefit)
-        norm = mat / mat.sum(axis=0)
-        W_alt[:, ci] = norm.mean(axis=1)
-
-    final_scores = W_alt @ crit_weights
-    df = df.copy()
-    df["AHP_Score"] = final_scores
-
-    # Tambah bobot per kriteria
-    for ci, crit in enumerate(crit_keys):
-        df[f"w_{crit}"] = W_alt[:, ci]
-
-    df = df.sort_values("AHP_Score", ascending=False).reset_index(drop=True)
-    df["Rank"] = df.index + 1
-    return df
-
-
-def gauge_cr(cr: float):
-    color = "#00d4aa" if cr <= 0.1 else "#ff4d6d"
-    label = "✅ Konsisten" if cr <= 0.1 else "⚠️ Tidak Konsisten — ubah perbandingan"
-    return color, label
+from core.ahp_services import *
 
 
 # ─────────────────────────────────────────────
@@ -155,7 +41,7 @@ def show_portofolio_management():
 
     # Fetch data
     with st.spinner("Mengambil data saham dari Yahoo Finance…"):
-        df_raw = fetch_stock_data(tuple(chosen_tickers))
+        df_raw = fetch_stock_data_choosen(tuple(chosen_tickers))
 
     if df_raw.empty:
         st.error("Gagal mengambil data saham. Coba lagi.")

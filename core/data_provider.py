@@ -5,7 +5,83 @@ import streamlit as st
 import os
 
 
-@st.cache_data(ttl=1800, show_spinner=False)
+@st.cache_data(ttl=1800, show_spinner=False)  ## Using CSV
+def fetch_stock_data_choosen(
+    tickerList: tuple,
+):  # ← tuple, bukan list (hashable = cacheable)
+    CSV_PATH = "data.csv"
+
+    # Kalau CSV ada, filter hanya ticker yang dipilih user
+    if os.path.exists(CSV_PATH):
+        df = pd.read_csv(CSV_PATH)
+        filtered = df[df["Ticker"].isin(tickerList)]
+        # Kalau semua ticker sudah ada di CSV, langsung return
+        if set(tickerList).issubset(set(df["Ticker"].tolist())):
+            return filtered.reset_index(drop=True)
+
+    # Fetch dari yfinance untuk ticker yang belum ada di CSV
+    existing_tickers = []
+    if os.path.exists(CSV_PATH):
+        existing_tickers = pd.read_csv(CSV_PATH)["Ticker"].tolist()
+
+    to_fetch = [t for t in tickerList if t not in existing_tickers]
+
+    all_data = []
+    for ticker in to_fetch:
+        try:
+            stock = yf.Ticker(ticker)
+            info = stock.info
+
+            hist = stock.history(period="2d")
+            past_24h = (
+                round(
+                    (
+                        (hist["Close"].iloc[-1] - hist["Close"].iloc[-2])
+                        / hist["Close"].iloc[-2]
+                    )
+                    * 100,
+                    2,
+                )
+                if len(hist) >= 2
+                else 0
+            )
+
+            all_data.append(
+                {
+                    "Ticker": ticker,
+                    "Name": info.get("shortName", "N/A"),
+                    "Sector": info.get("sector", "N/A"),
+                    "Industry": info.get("industry", "N/A"),
+                    "Price": info.get("currentPrice", 0),
+                    "MarketCap": info.get("marketCap", 0),
+                    "ROE": info.get("returnOnEquity", 0),
+                    "DER": info.get("debtToEquity", 0),
+                    "DivYield": info.get("dividendYield", 0),
+                    "PE_Ratio": info.get("trailingPE", 0),
+                    "PBV": info.get("priceToBook", 0),
+                    "Beta": info.get("beta", 0),
+                    "Past24H": past_24h,
+                }
+            )
+        except Exception as e:
+            print(f"Failed to fetch {ticker}: {e}")
+
+    # Append data baru ke CSV
+    if all_data:
+        df_new = pd.DataFrame(all_data)
+        if os.path.exists(CSV_PATH):
+            df_existing = pd.read_csv(CSV_PATH)
+            df_combined = pd.concat([df_existing, df_new], ignore_index=True)
+        else:
+            df_combined = df_new
+        df_combined.to_csv(CSV_PATH, index=False)
+
+    # Return hanya ticker yang dipilih user
+    df_final = pd.read_csv(CSV_PATH)
+    return df_final[df_final["Ticker"].isin(tickerList)].reset_index(drop=True)
+
+
+@st.cache_data(ttl=1800, show_spinner=False)  # From Y Finance
 def fetch_stock_data(tickerList=IDX_STOCKS):
     all_data = []
     try:
@@ -29,66 +105,10 @@ def fetch_stock_data(tickerList=IDX_STOCKS):
                 "Past24H": info.get("Close"),
             }
             all_data.append(data)
-            # with open('data.csv','w',newline=''as f:
-            #         writer = csv.writer(f)
-            #         writer.writerows(data))
     except Exception as e:
         print(f"Failed to fetch data {ticker} : {e}")
-    # return pd.DataFrame(all_data)
-    return pd.read_csv("data.csv")
-
-
-# @st.cache_data(ttl=1800, show_spinner=False)
-# def fetch_stock_data(tickerList=list(IDX_STOCKS.keys())):
-#     # Kalau CSV sudah ada, langsung baca — skip fetch
-#     if os.path.exists("data.csv"):
-#         return pd.read_csv("data.csv")
-
-#     # Kalau belum ada, baru fetch dari yfinance
-#     all_data = []
-#     for ticker in tickerList:
-#         try:
-#             stock = yf.Ticker(ticker)
-#             info = stock.info
-
-#             # Past24H: ambil dari history, bukan info
-#             hist = stock.history(period="2d")
-#             past_24h = (
-#                 round(
-#                     (
-#                         (hist["Close"].iloc[-1] - hist["Close"].iloc[-2])
-#                         / hist["Close"].iloc[-2]
-#                     )
-#                     * 100,
-#                     2,
-#                 )
-#                 if len(hist) >= 2
-#                 else 0
-#             )
-
-#             data = {
-#                 "Ticker": ticker,
-#                 "Name": IDX_STOCKS.get(ticker, info.get("shortName", "N/A")),
-#                 "Sector": info.get("sector", "N/A"),
-#                 "Industry": info.get("industry", "N/A"),
-#                 "Price": info.get("currentPrice", 0),
-#                 "MarketCap": info.get("marketCap", 0),
-#                 "ROE": info.get("returnOnEquity", 0),
-#                 "DER": info.get("debtToEquity", 0),
-#                 "DivYield": info.get("dividendYield", 0),
-#                 "PE_Ratio": info.get("trailingPE", 0),
-#                 "PBV": info.get("priceToBook", 0),
-#                 "Beta": info.get("beta", 0),
-#                 "Past24H": past_24h,
-#             }
-#             all_data.append(data)
-
-#         except Exception as e:
-#             print(f"Failed to fetch {ticker}: {e}")
-
-#     df = pd.DataFrame(all_data)
-#     df.to_csv("data.csv", index=False)  # Simpan ke CSV
-#     return df
+    return pd.DataFrame(all_data)
+    # return pd.read_csv("data.csv")
 
 
 # asda
@@ -115,9 +135,9 @@ def fetch_top_gainers(tickerList=IDX_STOCKS, period="1D"):
     }
 
     yf_period, compare_idx = period_map[period]
+    try:
+        for ticker in tickerList:
 
-    for ticker in tickerList:
-        try:
             stock = yf.Ticker(ticker)
 
             hist = stock.history(period=yf_period)
@@ -157,13 +177,13 @@ def fetch_top_gainers(tickerList=IDX_STOCKS, period="1D"):
                         "ChangePct": round(change_pct, 2),
                     }
                 )
-        except Exception as e:
-            print(f"{ticker}: {e}")
+    except Exception as e:
+        print(f"{ticker}: {e}")
 
     df_gainers = pd.DataFrame(top_gainers)
     df_losers = pd.DataFrame(lose_gainers)
 
     return (
-        df_gainers.head(20).sort_values(by="ChangePct", ascending=False),
-        df_losers.head(20).sort_values(by="ChangePct", ascending=True),
+        df_gainers.sort_values(by="ChangePct", ascending=False).head(20),
+        df_losers.sort_values(by="ChangePct", ascending=True).head(20),
     )
