@@ -11,11 +11,31 @@ from core.idx_tickers import IDX_STOCKS
 #  KRITERIA AHP (5 kriteria fundamental)
 # ─────────────────────────────────────────────
 CRITERIA = {
-    "ROE":      {"label": "Return on Equity",    "benefit": True,  "desc": "Semakin tinggi semakin baik"},
-    "DivYield": {"label": "Dividend Yield",       "benefit": True,  "desc": "Semakin tinggi semakin baik"},
-    "PE_Ratio": {"label": "P/E Ratio",            "benefit": False, "desc": "Semakin rendah semakin baik"},
-    "PBV":      {"label": "Price to Book Value",  "benefit": False, "desc": "Semakin rendah semakin baik"},
-    "Beta":     {"label": "Beta (Risiko)",         "benefit": False, "desc": "Semakin rendah semakin stabil"},
+    "ROE": {
+        "label": "Return on Equity",
+        "benefit": True,
+        "desc": "Semakin tinggi semakin baik",
+    },
+    "DivYield": {
+        "label": "Dividend Yield",
+        "benefit": True,
+        "desc": "Semakin tinggi semakin baik",
+    },
+    "PE_Ratio": {
+        "label": "P/E Ratio",
+        "benefit": False,
+        "desc": "Semakin rendah semakin baik",
+    },
+    "PBV": {
+        "label": "Price to Book Value",
+        "benefit": False,
+        "desc": "Semakin rendah semakin baik",
+    },
+    "Beta": {
+        "label": "Beta (Risiko)",
+        "benefit": False,
+        "desc": "Semakin rendah semakin stabil",
+    },
 }
 
 SAATY_SCALE = {
@@ -29,6 +49,7 @@ SAATY_SCALE = {
     8: "Di antara sangat & mutlak lebih penting",
     9: "Mutlak lebih penting",
 }
+
 
 # ─────────────────────────────────────────────
 #  HELPER
@@ -49,7 +70,7 @@ def build_criteria_matrix(user_inputs: dict) -> np.ndarray:
     matrix = np.ones((n, n))
     for (c1, c2), val in user_inputs.items():
         i, j = idx[c1], idx[c2]
-        v = max(1/9, min(9, val))
+        v = max(1 / 9, min(9, val))
         matrix[i][j] = v
         matrix[j][i] = 1 / v
     return matrix
@@ -105,10 +126,12 @@ def gauge_cr(cr: float):
 #  MAIN PAGE
 # ─────────────────────────────────────────────
 def show_portofolio_management():
-    st.markdown('<div class="hero-title">Portfolio<br>Management</div>', unsafe_allow_html=True)
+    st.markdown(
+        '<div class="hero-title">Portfolio<br>Management</div>', unsafe_allow_html=True
+    )
     st.markdown(
         '<div class="hero-sub">Rangking saham IDX menggunakan metode <b>AHP (Analytic Hierarchy Process)</b> '
-        '— tentukan bobot kriteria lalu sistem menghitung prioritas terbaik untuk portofolio Anda.</div>',
+        "— tentukan bobot kriteria lalu sistem menghitung prioritas terbaik untuk portofolio Anda.</div>",
         unsafe_allow_html=True,
     )
 
@@ -140,7 +163,17 @@ def show_portofolio_management():
 
     # Tampilkan preview data saham
     with st.expander("📋 Preview data saham yang dipilih", expanded=False):
-        preview_cols = ["Ticker", "Name", "Sector", "Price", "ROE", "DivYield", "PE_Ratio", "PBV", "Beta"]
+        preview_cols = [
+            "Ticker",
+            "Name",
+            "Sector",
+            "Price",
+            "ROE",
+            "DivYield",
+            "PE_Ratio",
+            "PBV",
+            "Beta",
+        ]
         avail_cols = [c for c in preview_cols if c in df_raw.columns]
         fmt = {}
         for c in ["ROE", "DivYield"]:
@@ -172,7 +205,11 @@ def show_portofolio_management():
     if "pw_inputs" not in st.session_state:
         st.session_state.pw_inputs = {}
 
-    pairs = [(crit_keys[i], crit_keys[j]) for i in range(len(crit_keys)) for j in range(i + 1, len(crit_keys))]
+    pairs = [
+        (crit_keys[i], crit_keys[j])
+        for i in range(len(crit_keys))
+        for j in range(i + 1, len(crit_keys))
+    ]
 
     # Tampilkan slider per pasang
     cols_per_row = 1
@@ -193,7 +230,8 @@ def show_portofolio_management():
                 options=list(range(-9, 0)) + [1] + list(range(2, 10)),
                 value=st.session_state.pw_inputs.get((c1, c2), 1),
                 format_func=lambda x: (
-                    f"← {abs(x)}×  {crit_labels[c2][:20]}" if x < 0
+                    f"← {abs(x)}×  {crit_labels[c2][:20]}"
+                    if x < 0
                     else ("= Sama" if x == 1 else f"{x}×  {crit_labels[c1][:20]}  →")
                 ),
                 key=key,
@@ -279,14 +317,21 @@ def show_portofolio_management():
     st.plotly_chart(fig_weights, use_container_width=True)
 
     # Tabel bobot kriteria
-    df_weights = pd.DataFrame({
-        "Kriteria": [crit_labels[k] for k in crit_keys],
-        "Bobot": weights,
-        "Jenis": [("✅ Benefit" if CRITERIA[k]["benefit"] else "🔻 Cost") for k in crit_keys],
-        "Keterangan": [CRITERIA[k]["desc"] for k in crit_keys],
-    }).sort_values("Bobot", ascending=False)
+    df_weights = pd.DataFrame(
+        {
+            "Kriteria": [crit_labels[k] for k in crit_keys],
+            "Bobot": weights,
+            "Jenis": [
+                ("✅ Benefit" if CRITERIA[k]["benefit"] else "🔻 Cost")
+                for k in crit_keys
+            ],
+            "Keterangan": [CRITERIA[k]["desc"] for k in crit_keys],
+        }
+    ).sort_values("Bobot", ascending=False)
     st.dataframe(
-        df_weights.style.format({"Bobot": "{:.4f}"}).bar(subset=["Bobot"], color="#00d4aa40"),
+        df_weights.style.format({"Bobot": "{:.4f}"}).bar(
+            subset=["Bobot"], color="#00d4aa40"
+        ),
         use_container_width=True,
         hide_index=True,
     )
@@ -312,7 +357,10 @@ def show_portofolio_management():
             index=[crit_labels[k] for k in crit_keys],
             columns=[crit_labels[k] for k in crit_keys],
         )
-        st.dataframe(df_matrix.style.format("{:.3f}").background_gradient(cmap="Blues"), use_container_width=True)
+        st.dataframe(
+            df_matrix.style.format("{:.3f}").background_gradient(cmap="Blues"),
+            use_container_width=True,
+        )
 
     # ── Ranking cards ─────────────────────────────────────────────────────────
     top3 = df_scored.head(3)
@@ -363,17 +411,34 @@ def show_portofolio_management():
 
     # ── Full Ranking Table ────────────────────────────────────────────────────
     st.markdown("### 📋 Tabel Ranking Lengkap")
-    display_cols = ["Rank", "Ticker", "Name", "Sector", "AHP_Score", "ROE", "DivYield", "PE_Ratio", "PBV", "Beta"]
+    display_cols = [
+        "Rank",
+        "Ticker",
+        "Name",
+        "Sector",
+        "AHP_Score",
+        "ROE",
+        "DivYield",
+        "PE_Ratio",
+        "PBV",
+        "Beta",
+    ]
     avail = [c for c in display_cols if c in df_scored.columns]
 
-    styled = df_scored[avail].style.format({
-        "AHP_Score": "{:.4f}",
-        "ROE": "{:.2%}",
-        "DivYield": "{:.2%}",
-        "PE_Ratio": "{:.2f}",
-        "PBV": "{:.2f}",
-        "Beta": "{:.2f}",
-    }).bar(subset=["AHP_Score"], color="#00d4aa40")
+    styled = (
+        df_scored[avail]
+        .style.format(
+            {
+                "AHP_Score": "{:.4f}",
+                "ROE": "{:.2%}",
+                "DivYield": "{:.2%}",
+                "PE_Ratio": "{:.2f}",
+                "PBV": "{:.2f}",
+                "Beta": "{:.2f}",
+            }
+        )
+        .bar(subset=["AHP_Score"], color="#00d4aa40")
+    )
 
     st.dataframe(styled, use_container_width=True, hide_index=True)
 
@@ -390,15 +455,19 @@ def show_portofolio_management():
         for i, row in df_scored.iterrows():
             vals = [row[f"w_{k}"] for k in crit_keys if f"w_{k}" in avail_radar]
             vals += [vals[0]]  # close polygon
-            fig_radar.add_trace(go.Scatterpolar(
-                r=vals,
-                theta=theta_labels + [theta_labels[0]],
-                mode="lines+markers",
-                name=str(row["Ticker"]).replace(".JK", ""),
-                line=dict(color=colors_radar[i % len(colors_radar)], width=2),
-                fill="toself",
-                fillcolor=colors_radar[i % len(colors_radar)].replace("rgb", "rgba").replace(")", ",0.07)"),
-            ))
+            fig_radar.add_trace(
+                go.Scatterpolar(
+                    r=vals,
+                    theta=theta_labels + [theta_labels[0]],
+                    mode="lines+markers",
+                    name=str(row["Ticker"]).replace(".JK", ""),
+                    line=dict(color=colors_radar[i % len(colors_radar)], width=2),
+                    fill="toself",
+                    fillcolor=colors_radar[i % len(colors_radar)]
+                    .replace("rgb", "rgba")
+                    .replace(")", ",0.07)"),
+                )
+            )
         fig_radar.update_layout(
             polar=dict(
                 bgcolor="rgba(0,0,0,0)",
@@ -408,8 +477,11 @@ def show_portofolio_management():
             paper_bgcolor="rgba(0,0,0,0)",
             font=dict(color="#e8edf5", family="DM Sans"),
             legend=dict(
-                orientation="h", yanchor="bottom", y=-0.25,
-                font=dict(size=11), bgcolor="rgba(0,0,0,0)",
+                orientation="h",
+                yanchor="bottom",
+                y=-0.25,
+                font=dict(size=11),
+                bgcolor="rgba(0,0,0,0)",
             ),
             margin=dict(t=20, b=60, l=40, r=40),
             height=400,
@@ -422,18 +494,29 @@ def show_portofolio_management():
     df_bar["TickerClean"] = df_bar["Ticker"].str.replace(".JK", "", regex=False)
     df_bar = df_bar.sort_values("AHP_Score")
 
-    bar_colors = ["#00d4aa" if i == len(df_bar) - 1 else "#0097ff" if i == len(df_bar) - 2
-                  else "#ff6b35" if i == len(df_bar) - 3 else "#1e2d45"
-                  for i in range(len(df_bar))]
+    bar_colors = [
+        (
+            "#00d4aa"
+            if i == len(df_bar) - 1
+            else (
+                "#0097ff"
+                if i == len(df_bar) - 2
+                else "#ff6b35" if i == len(df_bar) - 3 else "#1e2d45"
+            )
+        )
+        for i in range(len(df_bar))
+    ]
 
-    fig_bar = go.Figure(go.Bar(
-        x=df_bar["AHP_Score"],
-        y=df_bar["TickerClean"],
-        orientation="h",
-        marker_color=bar_colors,
-        text=[f"{s:.4f}" for s in df_bar["AHP_Score"]],
-        textposition="outside",
-    ))
+    fig_bar = go.Figure(
+        go.Bar(
+            x=df_bar["AHP_Score"],
+            y=df_bar["TickerClean"],
+            orientation="h",
+            marker_color=bar_colors,
+            text=[f"{s:.4f}" for s in df_bar["AHP_Score"]],
+            textposition="outside",
+        )
+    )
     fig_bar.update_layout(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
@@ -448,7 +531,9 @@ def show_portofolio_management():
     # ── Alokasi Portofolio Rekomendasi ────────────────────────────────────────
     st.divider()
     st.markdown("## 💰 Rekomendasi Alokasi Portofolio")
-    st.markdown("Alokasi dana proporsional berdasarkan skor AHP, hanya untuk saham dengan CR konsisten.")
+    st.markdown(
+        "Alokasi dana proporsional berdasarkan skor AHP, hanya untuk saham dengan CR konsisten."
+    )
 
     total_invest = st.number_input(
         "Total investasi (Rp)",
@@ -459,7 +544,12 @@ def show_portofolio_management():
         format="%d",
     )
 
-    top_n = st.slider("Jumlah saham terpilih untuk alokasi", 2, min(len(df_scored), 10), min(5, len(df_scored)))
+    top_n = st.slider(
+        "Jumlah saham terpilih untuk alokasi",
+        2,
+        min(len(df_scored), 10),
+        min(5, len(df_scored)),
+    )
     df_alloc = df_scored.head(top_n).copy()
     score_sum = df_alloc["AHP_Score"].sum()
     df_alloc["Alokasi_%"] = df_alloc["AHP_Score"] / score_sum
@@ -468,14 +558,16 @@ def show_portofolio_management():
     # Pie chart alokasi
     col_pie, col_tbl = st.columns([1, 1])
     with col_pie:
-        fig_pie = go.Figure(go.Pie(
-            labels=df_alloc["Ticker"].str.replace(".JK", "", regex=False),
-            values=df_alloc["Alokasi_%"],
-            hole=0.5,
-            marker=dict(colors=px.colors.qualitative.Plotly[:top_n]),
-            textinfo="label+percent",
-            textfont=dict(size=12),
-        ))
+        fig_pie = go.Figure(
+            go.Pie(
+                labels=df_alloc["Ticker"].str.replace(".JK", "", regex=False),
+                values=df_alloc["Alokasi_%"],
+                hole=0.5,
+                marker=dict(colors=px.colors.qualitative.Plotly[:top_n]),
+                textinfo="label+percent",
+                textfont=dict(size=12),
+            )
+        )
         fig_pie.update_layout(
             paper_bgcolor="rgba(0,0,0,0)",
             font=dict(color="#e8edf5", family="DM Sans"),
@@ -486,40 +578,18 @@ def show_portofolio_management():
         st.plotly_chart(fig_pie, use_container_width=True)
 
     with col_tbl:
-        df_alloc_display = df_alloc[["Rank", "Ticker", "Name", "AHP_Score", "Alokasi_%", "Alokasi_Rp"]].copy()
+        df_alloc_display = df_alloc[
+            ["Rank", "Ticker", "Name", "AHP_Score", "Alokasi_%", "Alokasi_Rp"]
+        ].copy()
         st.dataframe(
-            df_alloc_display.style.format({
-                "AHP_Score": "{:.4f}",
-                "Alokasi_%": "{:.1%}",
-                "Alokasi_Rp": "Rp {:,.0f}",
-            }).bar(subset=["Alokasi_%"], color="#00d4aa40"),
+            df_alloc_display.style.format(
+                {
+                    "AHP_Score": "{:.4f}",
+                    "Alokasi_%": "{:.1%}",
+                    "Alokasi_Rp": "Rp {:,.0f}",
+                }
+            ).bar(subset=["Alokasi_%"], color="#00d4aa40"),
             use_container_width=True,
             hide_index=True,
             height=320,
         )
-
-    # ── Catatan Metodologi ────────────────────────────────────────────────────
-    with st.expander("📚 Metodologi AHP SCPK", expanded=False):
-        st.markdown("""
-**Analytic Hierarchy Process (AHP)** adalah metode pengambilan keputusan multi-kriteria yang dikembangkan oleh Thomas L. Saaty.
-
-### Langkah Perhitungan:
-1. **Pairwise Comparison Matrix** — setiap kriteria dibandingkan berpasangan menggunakan Skala Saaty (1–9)
-2. **Normalisasi Matrix** — tiap elemen dibagi dengan jumlah kolom
-3. **Priority Vector (Bobot)** — rata-rata baris dari matrix ternormalisasi
-4. **Consistency Check** — λ_max → CI → CR
-   - `CI = (λ_max − n) / (n − 1)`
-   - `CR = CI / RI` (RI = Random Index Saaty)
-   - **CR ≤ 0.10** → konsisten ✅
-5. **Matriks Alternatif** — tiap saham dibandingkan per kriteria; *benefit* = nilai tinggi lebih baik; *cost* = nilai rendah lebih baik
-6. **Skor Akhir** — perkalian matriks bobot alternatif × bobot kriteria
-
-### Kriteria yang Digunakan:
-| Kriteria | Jenis | Keterangan |
-|---|---|---|
-| ROE | Benefit | Semakin tinggi semakin baik |
-| Dividend Yield | Benefit | Semakin tinggi semakin baik |
-| P/E Ratio | Cost | Semakin rendah = lebih murah |
-| PBV | Cost | Semakin rendah = lebih murah |
-| Beta | Cost | Semakin rendah = lebih stabil |
-        """)

@@ -1,0 +1,255 @@
+Ticker,Name,Sector,Industry,Price,MarketCap,ROE,DER,DivYield,PE_Ratio,PBV,Beta,Past24H
+BBCA.JK,Bank Central Asia,Financial Services,Banks - Regional,6100.0,749545076031488,0.22972,0.0,5.69,12.956119,2.8925185,0.013,3.39
+BBRI.JK,Bank Rakyat Indonesia,Financial Services,Banks - Regional,3170.0,477322499063808,0.18135999,0.0,13.7,8.151615,1.4113472,0.238,3.93
+BMRI.JK,Bank Mandiri,Financial Services,Banks - Regional,4220.0,393866653990912,0.21040002,0.0,11.58,6.9963694,1.2902874,0.016,2.43
+BBNI.JK,Bank Negara Indonesia,Financial Services,Banks - Regional,3890.0,144928940228608,0.12029,0.0,9.24,7.136567,0.8990318,0.203,2.91
+BBTN.JK,Bank Tabungan Negara,Financial Services,Banks - Regional,1390.0,19507877773312,0.10541,0.0,3.98,5.2663484,0.5305514,0.439,8.17
+BNGA.JK,Bank CIMB Niaga,Financial Services,Banks - Regional,1635.0,41341581000704,0.119770005,0.0,9.83,6.0127974,0.6986212,0.073,-0.61
+BDMN.JK,Bank Danamon Indonesia,Financial Services,Banks - Regional,4880.0,47694936539136,0.08383001,0.0,3.14,12.009647,0.8930356,0.631,7.73
+NISP.JK,Bank OCBC NISP,Financial Services,Banks - Regional,1310.0,30058339106816,0.12162,0.0,3.46,5.8620844,0.6739588,0.114,0.77
+PNBN.JK,Bank Pan Indonesia,Financial Services,Banks - Regional,955.0,22988638388224,0.04975,0.0,4.4,8.460312,0.4181653,-0.244,0.0
+BJBR.JK,Bank Pembangunan Daerah Jawa Barat,Financial Services,Banks - Regional,775.0,8154118619136,0.07808,0.0,11.18,7.0009036,0.47999626,0.125,1.31
+BJTM.JK,Bank Pembangunan Daerah Jawa Timur,Financial Services,Banks - Regional,525.0,7883136172032,0.10316,0.0,10.99,4.8200517,0.57356364,0.216,1.94
+MEGA.JK,Bank Mega,Financial Services,Banks - Regional,1865.0,43355706753024,0.15123999,0.0,4.61,12.563153,1.7464116,0.156,0.0
+BTPS.JK,Bank BTPN Syariah,Financial Services,Banks - Regional,975.0,7511107698688,0.12149,0.0,12.46,6.209796,0.73077554,0.377,1.04
+BNII.JK,Bank Maybank Indonesia,Financial Services,Banks - Regional,195.0,14861963624448,0.052950002,0.0,3.92,8.965517,0.45794857,0.226,0.52
+AGRO.JK,Bank Rakyat Indonesia Agroniaga,Financial Services,Banks - Regional,167.0,4119816306688,-0.15855,0.0,0.0,0.0,1.3975948,0.592,4.38
+BMAS.JK,Bank Maspion Indonesia,Financial Services,Banks - Regional,505.0,9141845229568,0.00057,0.0,0.0,2525.0,1.4056046,-0.156,1.0
+BACA.JK,Bank Capital Indonesia,Financial Services,Banks - Regional,126.0,2514081021952,0.01952,0.0,0.0,19.148937,0.3706929,0.375,1.61
+BBHI.JK,Allo Bank Indonesia,Financial Services,Banks - Regional,980.0,21184957644800,0.075840004,0.0,0.83,39.26282,2.8153963,0.529,24.84
+ARTO.JK,Bank Jago,Financial Services,Banks - Regional,1150.0,15940530995200,0.03447,0.0,0.0,54.143127,1.787463,0.803,1.77
+BBYB.JK,Bank Neo Commerce,Financial Services,Banks - Regional,276.0,3684733026304,0.13502,0.0,0.0,6.912096,0.85595196,0.669,3.76
+TLKM.JK,Telkom Indonesia,Communication Services,Telecom Services,2930.0,289221621317632,0.16052,49.763,7.28,16.585531,2.116445,0.072,0.34
+ISAT.JK,Indosat Ooredoo Hutchison,Communication Services,Telecom Services,2160.0,69661752295424,0.15026,133.421,5.41,12.2372675,1.8422898,-0.301,5.37
+EXCL.JK,XL Axiata,Communication Services,Telecom Services,2880.0,52415604719616,-0.20136999,209.04,5.78,0.0,1.7568957,0.0,4.73
+FREN.JK,Smartfren Telecom,N/A,N/A,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+LINK.JK,Link Net,Communication Services,Telecom Services,1170.0,3219729416192,-0.39328998,259.176,0.0,0.0,0.907073,0.426,-5.26
+TBIG.JK,Tower Bersama Infrastructure,Communication Services,Telecom Services,1340.0,30273924235264,0.12106,221.158,3.66,21.392082,2.4063153,-0.093,0.75
+TOWR.JK,Sarana Menara Nusantara,Real Estate,Real Estate Services,392.0,22818941042688,0.15922,166.964,3.48,5.6828065,0.84601086,-0.024,-1.01
+MTEL.JK,Dayamitra Telekomunikasi,Communication Services,Telecom Services,510.0,41320471068672,0.06328,62.596,3.58,18.874907,1.2660993,-0.179,0.99
+UNVR.JK,Unilever Indonesia,Consumer Defensive,Household & Personal Products,1770.0,67226782662656,0.74291,9.027,7.59,18.232386,15.022407,0.206,0.28
+ICBP.JK,Indofood CBP Sukses Makmur,Consumer Defensive,Packaged Foods,7100.0,82799545548800,0.14631,62.219,3.66,9.053928,1.5166079,-0.056,4.03
+INDF.JK,Indofood Sukses Makmur,Consumer Defensive,Packaged Foods,6950.0,61023960694784,0.13319,61.085,4.16,5.586233,0.78928065,0.034,3.35
+MYOR.JK,Mayora Indah,Consumer Defensive,Packaged Foods,1890.0,41821254189056,0.17131001,26.627,2.96,13.548388,2.2124438,-0.184,1.61
+ROTI.JK,Nippon Indosari Corpindo,Consumer Defensive,Packaged Foods,520.0,2923583242240,0.10853,30.824,15.69,12.342749,1.4306585,-0.142,1.96
+ULTJ.JK,Ultra Jaya Milk Industry,Consumer Defensive,Beverages - Non-Alcoholic,1600.0,16637080109056,0.18201,0.462,7.95,11.184118,2.0238333,0.285,-2.14
+SIDO.JK,Industri Jamu Sido Muncul,Healthcare,Drug Manufacturers - Specialty & Generic,404.0,11891820724224,0.32823002,0.049,9.07,10.455486,3.6503274,0.069,-0.98
+CPIN.JK,Charoen Pokphand Indonesia,Consumer Defensive,Farm Products,4400.0,72151197548544,0.19496,18.068,4.14,10.806562,1.9650964,0.075,1.15
+JPFA.JK,Japfa Comfeed Indonesia,Consumer Defensive,Farm Products,2630.0,30580771127296,0.23401,59.254,5.45,7.642683,1.638511,0.227,2.33
+MAIN.JK,Malindo Feedmill,Consumer Defensive,Packaged Foods,830.0,1851312963584,0.15941,59.262,7.78,4.0888715,0.6161804,-0.016,-0.6
+CMRY.JK,Cisarua Mountain Dairy,Consumer Defensive,Packaged Foods,4480.0,35547380711424,0.28934,0.006,7.74,16.856047,4.8432536,0.102,-0.88
+GGRM.JK,Gudang Garam,Consumer Defensive,Tobacco,15650.0,30111977963520,0.04741,0.261,3.16,10.066121,0.4812702,0.843,-0.95
+HMSP.JK,HM Sampoerna,Consumer Defensive,Tobacco,730.0,84912199696384,0.22225,1.217,7.61,12.377077,2.7906904,0.635,-1.35
+WIIM.JK,Wismilak Inti Makmur,Consumer Defensive,Tobacco,1755.0,3662516060160,0.22750999,8.923,3.64,7.39103,1.6551467,-0.291,-1.4
+CAMP.JK,Campina Ice Cream Industry,Consumer Defensive,Packaged Foods,189.0,1112265064448,0.07822,0.0,0.0,14.605874,1.0986009,0.414,6.78
+GOOD.JK,Garudafood Putra Putri Jaya,Consumer Defensive,Packaged Foods,332.0,12243364216832,0.17496,48.824,2.86,17.735043,2.9930131,0.083,0.0
+FOOD.JK,Sentra Food Indonesia,Consumer Defensive,Packaged Foods,165.0,107249999872,0.0,0.0,0.0,0.0,-4.769062,0.0,-2.37
+BOBA.JK,Formosa Ingredient Factory,Consumer Defensive,Packaged Foods,258.0,298183491584,0.118640006,0.348,2.59,15.206884,1.7117608,1.046,-4.44
+KLBF.JK,Kalbe Farma,Healthcare,Drug Manufacturers - General,810.0,36651577376768,0.1443,1.187,4.5,10.165663,1.5084642,0.013,1.25
+KAEF.JK,Kimia Farma,Healthcare,Medical Distribution,505.0,2811127660544,-0.061539996,249.365,0.0,0.0,0.94966584,1.1,4.77
+MERK.JK,Merck Indonesia,Healthcare,Drug Manufacturers - Specialty & Generic,4010.0,1796480040960,0.31792,1.789,4.21,6.074469,1.7259017,0.215,-0.74
+DVLA.JK,Darya-Varia Laboratoria,Healthcare,Drug Manufacturers - Specialty & Generic,1595.0,1786399948800,0.09178001,0.011,6.79,12.763063,1.1644213,-0.105,0.31
+TSPC.JK,Tempo Scan Pacific,Industrials,Conglomerates,2390.0,10778575896576,0.14207,11.214,8.4,7.995183,1.1726154,0.221,0.42
+PYFA.JK,Pyridam Farma,Healthcare,Drug Manufacturers - Specialty & Generic,240.0,2696811642880,-0.37502998,491.423,0.0,0.0,3.5160713,0.823,-0.83
+HEAL.JK,Medikaloka Hermina,Healthcare,Medical Care Facilities,980.0,15012653432832,0.07834,48.057,1.38,36.814423,2.6259449,-0.119,0.51
+MIKA.JK,Mitra Keluarga Karyasehat,Healthcare,Medical Care Facilities,1695.0,23571774570496,0.17981,0.111,2.54,17.093586,3.1102858,0.013,0.0
+SILO.JK,Siloam International Hospitals,Healthcare,Medical Care Facilities,2280.0,29611507318784,0.12493,20.859,0.0,25.853271,2.9720702,-0.029,-4.6
+PRDA.JK,Prodia Widyahusada,Healthcare,Diagnostics & Research,2550.0,2268927623168,0.08843,0.717,6.48,10.660535,0.9416829,-0.299,1.59
+SOHO.JK,Soho Global Health,Healthcare,Medical Distribution,1585.0,20116316094464,0.23372999,0.184,4.55,33.68757,7.7879705,1.015,-0.63
+INAF.JK,Indofarma,Healthcare,Drug Manufacturers - Specialty & Generic,126.0,390507724800,0.0,0.0,0.0,0.0,-0.43831116,0.284,0.0
+ADRO.JK,Adaro Energy Indonesia,Energy,Thermal Coal,2300.0,66241133805568,0.10256,19.536,10.06,7.5286417,13529.412,-0.245,-2.13
+PTBA.JK,Bukit Asam,Energy,Thermal Coal,2800.0,32240199270400,0.14413999,11.489,12.22,9.6568365,1.3699896,-0.412,2.94
+ITMG.JK,Indo Tambangraya Megah,Energy,Thermal Coal,22525.0,25113101598720,0.093839996,4.237,7.46,7.908476,13273.424,0.0,-2.8
+HRUM.JK,Harum Energy,Energy,Thermal Coal,790.0,10387359531008,0.03585,33.731,0.0,14.306411,11449.275,0.206,0.0
+DOID.JK,Delta Dunia Makmur,Energy,Thermal Coal,206.0,1515576885248,-0.76149005,1096.966,0.0,0.0,15846.153,-0.259,-1.9
+GEMS.JK,Golden Energy Mines,Energy,Thermal Coal,7750.0,45588238303232,0.37932998,18.974,3.14,9.894544,65126.05,-0.257,2.31
+PTRO.JK,Petrosea,Basic Materials,Other Industrial Metals & Mining,3580.0,36108058492928,0.12607999,287.471,0.3,69.17874,137692.31,0.82,-4.53
+KKGI.JK,Resource Alam Indonesia,Energy,Thermal Coal,282.0,1374278778880,0.01387,1.872,12.5,31.721033,9096.774,-0.398,3.68
+MBAP.JK,Mitrabara Adiperdana,Energy,Thermal Coal,1555.0,1908407795712,0.00818,19.539,2.35,87.261505,14809.524,-0.616,-4.01
+MYOH.JK,Samindo Resources,Energy,Thermal Coal,1155.0,2548290813952,0.08284,8.646,5.12,9.5423,14085.365,-0.122,0.0
+PKPK.JK,Perdana Karya Perkasa,Industrials,Engineering & Construction,2880.0,3456000065536,0.27048,79.554,0.0,62.028862,12.514611,0.737,-1.37
+GTBO.JK,Garda Tujuh Buana,Energy,Thermal Coal,191.0,477500014592,-0.094189994,1.192,0.0,0.0,10611.111,-0.596,0.0
+SMMT.JK,Golden Eagle Energy,Energy,Thermal Coal,1760.0,6027999707136,0.05607,81.081,0.0,123.249306,176000.0,0.848,3.53
+FIRE.JK,Alfa Energi Investama,Energy,Thermal Coal,105.0,154913128448,0.00025,2.138,0.0,0.0,0.6460226,-0.294,-2.78
+APEX.JK,Apexindo Pratama Duta,Energy,Oil & Gas Drilling,148.0,524877037568,0.060399998,193.251,0.0,6.1847053,7789.474,0.432,4.23
+MDKA.JK,Merdeka Copper Gold,Basic Materials,Other Industrial Metals & Mining,2850.0,69588167426048,0.0055299997,71.135,0.0,0.0,89062.49,1.076,4.78
+ANTM.JK,Aneka Tambang,Basic Materials,Gold,3070.0,73774451916800,0.24687,21.609,4.91,10.231969,1.8991026,0.88,-0.65
+INCO.JK,Vale Indonesia,Basic Materials,Other Industrial Metals & Mining,5475.0,57705318318080,0.03511,0.103,0.96,33.4392,20505.62,1.227,-1.35
+AMMN.JK,Amman Mineral Internasional,Basic Materials,Other Precious Metals & Mining,3150.0,228099102867456,0.10484,116.552,0.0,21.811384,41447.37,0.026,8.62
+NCKL.JK,Trimegah Bangun Persada,Basic Materials,Other Industrial Metals & Mining,875.0,55114383491072,0.25308,23.671,3.55,6.9055324,1.5429187,1.174,2.34
+MBMA.JK,Merdeka Battery Materials,Basic Materials,Other Precious Metals & Mining,496.0,53565729013760,0.0428,40.244,0.0,102.904564,33066.668,0.915,2.9
+DKFT.JK,Central Omega Resources,Basic Materials,Other Industrial Metals & Mining,730.0,4024844681216,0.55051,35.504,9.59,5.9699054,2.738051,0.694,0.0
+CITA.JK,Cita Mineral Investindo,Basic Materials,Other Industrial Metals & Mining,3360.0,13306813218816,0.18646,0.0,9.26,8.037508,1.4681362,-0.09,-2.3
+IFSH.JK,Ifishdeco,Basic Materials,Other Industrial Metals & Mining,1675.0,3221271871488,0.11908,3.513,1.55,54.189583,4.212946,1.105,-0.3
+TINS.JK,Timah,Basic Materials,Other Industrial Metals & Mining,3550.0,26439522975744,0.30662,11.26,1.78,9.808255,2.655246,0.947,-0.84
+PGAS.JK,Perusahaan Gas Negara,Utilities,Utilities - Regulated Gas,1875.0,45452829392896,0.10092,29.053,10.0,10.533708,16025.642,0.134,3.02
+MEDC.JK,Medco Energi Internasional,Energy,Oil & Gas E&P,1270.0,31344390307840,0.06968,155.798,4.25,11.686758,14269.663,0.299,-5.22
+ELSA.JK,Elnusa,Energy,Oil & Gas Equipment & Services,650.0,4744025210880,0.13618,9.986,5.93,6.578947,0.8622176,0.282,-1.52
+RUIS.JK,Radiant Utama Interinsco,Energy,Oil & Gas Equipment & Services,186.0,143219998720,0.024619998,88.962,0.0,11.097852,0.25494573,-0.295,3.33
+ENRG.JK,Energi Mega Persada,Energy,Oil & Gas E&P,1390.0,36621260947456,0.12380999,51.917,0.0,25.69791,40882.35,0.385,-6.71
+ESSA.JK,Surya Esa Perkasa,Basic Materials,Chemicals,715.0,12317287776256,0.121120006,0.022,1.04,13.577668,26481.48,0.238,1.42
+BIPI.JK,Astrindo Nusantara Infrastruktur,Industrials,Infrastructure Operations,179.0,11404124880896,0.00408,120.811,0.0,617.2414,25571.428,1.794,-2.72
+PGEO.JK,Pertamina Geothermal Energy,Utilities,Utilities - Renewable,925.0,38757071847424,0.07272,35.814,5.35,14.835606,18500.0,-0.708,0.0
+RAJA.JK,Rukun Raharja,Utilities,Utilities - Regulated Gas,3250.0,13738018078720,0.14639,73.222,0.73,26.47011,63725.492,-0.205,-4.97
+BREN.JK,Barito Renewables Energy,Utilities,Utilities - Renewable,2380.0,318395253784576,0.20444,221.044,0.06,127.81954,476000.0,0.711,-2.86
+AALI.JK,Astra Agro Lestari,Consumer Defensive,Farm Products,6525.0,12558591328256,0.068390004,0.0,6.94,8.01164,0.52508223,0.261,-1.14
+LSIP.JK,PP London Sumatra Indonesia,Consumer Defensive,Farm Products,1285.0,8763653750784,0.1382,0.001,4.94,4.6224685,0.62597764,0.132,-2.28
+SIMP.JK,Salim Ivomas Pratama,Consumer Defensive,Packaged Foods,565.0,8758239952896,0.11061,34.109,3.57,4.2806273,0.4195288,0.381,0.89
+SSMS.JK,Sawit Sumbermas Sarana,Consumer Defensive,Farm Products,775.0,7381874900992,0.3669,252.243,9.6,5.532158,2.8307917,0.036,-11.43
+DSNG.JK,Dharma Satya Nusantara,Consumer Defensive,Farm Products,1240.0,13143804739584,0.16868,32.12,1.88,6.9096174,1.1034796,0.077,-3.12
+TAPG.JK,TBS Energi Utama,Consumer Defensive,Farm Products,1525.0,30275123806208,0.30756,8.742,10.19,8.382345,2.7009459,0.306,-5.86
+PALM.JK,Provident Agro,Financial Services,Asset Management,342.0,5366647619584,1.02334,39.378,0.0,0.9617278,0.90586424,0.421,3.01
+SGRO.JK,Sampoerna Agro,Consumer Defensive,Farm Products,2860.0,5201258872832,0.04837,32.183,11.34,18.686703,1.0320922,-0.231,0.35
+TBLA.JK,Tunas Baru Lampung,Consumer Defensive,Packaged Foods,650.0,3902698422272,0.098850004,187.438,13.7,4.3411474,0.42241806,0.164,2.36
+BWPT.JK,Eagle High Plantations,Consumer Defensive,Packaged Foods,89.0,2769890836480,0.1429,162.425,0.0,7.497894,0.9668133,0.204,2.3
+JAWA.JK,Jaya Agra Wattie,Consumer Defensive,Farm Products,133.0,2158982594560,-0.05523,174.023,0.0,0.0,1.605427,-0.42,5.56
+ANJT.JK,Austindo Nusantara Jaya,Consumer Defensive,Farm Products,1620.0,5433763299328,0.07625,35.078,0.0,9.375,13278.688,0.487,1.25
+BSDE.JK,Bumi Serpong Damai,Real Estate,Real Estate - Development,675.0,14116542480384,0.05716,31.143,0.0,5.545514,0.32214648,0.207,-1.46
+CTRA.JK,Ciputra Development,Real Estate,Real Estate - Development,655.0,12140879544320,0.102290004,28.661,3.66,4.816885,0.49378994,0.177,0.0
+PWON.JK,Pakuwon Jati,Real Estate,Real Estate - Diversified,296.0,14255241822208,0.110240005,20.976,4.45,5.853273,0.6344307,0.313,1.37
+SMRA.JK,Summarecon Agung,Real Estate,Real Estate - Development,292.0,4820502052864,0.07928,87.736,3.1,6.7126436,0.4136159,0.43,0.69
+MKPI.JK,Metropolitan Kentjana,Real Estate,Real Estate Services,21900.0,20765447553024,0.42720002,0.028,3.26,17.813858,2.675089,-0.021,0.11
+DMAS.JK,Puradelta Lestari,Real Estate,Real Estate - Development,156.0,7518905434112,0.16853,0.0,38.41,5.951927,1.0122246,0.053,3.31
+MTLA.JK,Metropolitan Land,Real Estate,Real Estate Services,510.0,3904114524160,0.07868,20.163,2.21,9.766373,0.7117378,-0.153,0.0
+APLN.JK,Agung Podomoro Land,Real Estate,Real Estate - Development,152.0,3450297909248,0.058969997,37.154,0.0,8.80139,0.29344988,0.513,-2.56
+LPKR.JK,Lippo Karawaci,Healthcare,Medical Care Facilities,70.0,4961411792896,0.015149999,32.191,0.0,12.195123,0.16654772,0.648,-2.78
+KIJA.JK,Kawasan Industri Jababeka,Real Estate,Real Estate - Development,124.0,2578807259136,0.10227,55.543,1.46,5.8352942,0.41171664,0.362,2.48
+DILD.JK,Intiland Development,Real Estate,Real Estate - Development,122.0,1264634167296,0.02434,48.1,0.0,22.509224,0.22390868,0.207,1.67
+GPRA.JK,Perdana Gapuraprima,Real Estate,Real Estate - Development,102.0,436218855424,0.06,22.393,4.35,8.46473,0.32096162,0.175,3.03
+PLIN.JK,Plaza Indonesia Realty,Real Estate,Real Estate Services,2510.0,8874741465088,0.056900002,4.646,0.0,8.896923,0.77983636,-0.143,
+URBN.JK,Urban Jakarta Propertindo,Real Estate,Real Estate - Development,192.0,598962864128,-0.09034,44.869,0.0,0.0,0.55168927,0.579,-2.54
+EMDE.JK,Megapolitan Developments,Real Estate,Real Estate Services,66.0,221100015616,-0.03206,20.332,0.0,0.0,0.12236816,0.0,0.0
+BCIP.JK,Bumi Citra Permai,Real Estate,Real Estate - Development,63.0,90084679680,0.05325,2.761,0.0,3.409091,0.17645526,0.315,0.0
+POLL.JK,Pollux Properti Indonesia,Real Estate,Real Estate - Development,112.0,931708207104,0.01849,27.252,0.0,85.496185,0.58212966,-0.119,0.0
+TARA.JK,Sitara Propertindo,Real Estate,Real Estate - Diversified,32.0,322228649984,-0.00445,0.0,0.0,0.0,0.30851105,-0.075,6.67
+JSMR.JK,Jasa Marga,Industrials,Infrastructure Operations,3000.0,21773613531136,0.07721,118.716,5.35,6.2122087,0.5989065,0.14,1.69
+WIKA.JK,Wijaya Karya,Industrials,Engineering & Construction,204.0,8133880578048,-1.8133299,6422.033,0.0,0.0,1.4378653,0.122,0.0
+PTPP.JK,PP Persero,Industrials,Engineering & Construction,210.0,1298921684992,-0.82073,464.341,0.0,0.0,0.41241485,0.262,-1.87
+ADHI.JK,Adhi Karya,Industrials,Engineering & Construction,180.0,1513369632768,-0.82901,247.473,0.0,0.0,0.5011708,0.376,0.0
+WTON.JK,Wijaya Karya Beton,Basic Materials,Building Materials,83.0,723383746560,0.00115,11.304,0.57,18.12227,0.20098507,0.351,2.47
+NRCA.JK,Nusa Raya Cipta,Industrials,Engineering & Construction,476.0,1188218929152,0.13655,23.8,3.58,6.7023377,0.84705496,-0.088,0.0
+ACST.JK,Acset Indonusa,Industrials,Engineering & Construction,83.0,1467038302208,0.0,0.0,0.0,0.0,-3.9733832,0.1,1.22
+WSBP.JK,Waskita Beton Precast,Basic Materials,Building Materials,16.0,878963130368,0.0,0.0,0.0,0.0,-0.41621143,0.087,6.67
+IDPR.JK,Indonesia Pondasi Raya,Industrials,Engineering & Construction,294.0,588882051072,0.038399998,63.728,1.66,19.691895,0.85662335,0.671,-1.34
+PBSA.JK,Paramita Bangun Sarana,Industrials,Engineering & Construction,850.0,2537153363968,0.34544,0.039,6.47,8.62769,3.3229344,0.117,0.0
+BTON.JK,Betonjaya Manunggal,Basic Materials,Steel,378.0,272159997952,0.07112,0.0,0.0,28.244787,0.8755878,0.0,1.07
+DGIK.JK,Nusa Konstruksi Enjiniring,Industrials,Engineering & Construction,135.0,694028337152,0.07448,35.38,0.0,13.00578,0.93390065,0.213,5.47
+MAPI.JK,Mitra Adiperkasa,Consumer Cyclical,Department Stores,1495.0,24817000513536,0.17545,46.96,0.66,10.456008,1.6938207,0.218,-0.66
+ACES.JK,Ace Hardware Indonesia,Consumer Cyclical,Specialty Retail,350.0,5992136310784,0.12577,15.234,9.73,8.699975,0.89833885,0.138,0.57
+AMRT.JK,Sumber Alfaria Trijaya,Consumer Defensive,Grocery Stores,1295.0,53213923377152,0.19111,13.591,2.39,15.273027,2.8791726,-0.159,-9.12
+LPPF.JK,Matahari Department Store,Consumer Cyclical,Department Stores,1600.0,1872354476032,0.76869005,241.162,15.67,4.572212,3.5329838,-0.027,0.31
+RALS.JK,Ramayana Lestari Sentosa,Consumer Cyclical,Department Stores,392.0,2404832772096,0.06363,10.817,12.63,6.956522,0.6173851,0.492,-1.01
+MIDI.JK,Midi Utama Indonesia,Consumer Defensive,Grocery Stores,294.0,9829977423872,0.18656,12.339,2.39,11.325116,2.164295,-0.06,-4.55
+ERAA.JK,Erajaya Swasembada,Consumer Cyclical,Specialty Retail,372.0,5818934624256,0.15758,98.549,5.11,4.063353,0.60942745,0.434,0.0
+CSAP.JK,Catur Sentosa Adiprana,Industrials,Industrial Distribution,266.0,1511724548096,0.03777,117.873,2.43,11.801242,0.42421877,0.024,-0.75
+MPPA.JK,Matahari Putra Prima,Consumer Cyclical,Department Stores,49.0,635365359616,-1.9903901,0.0,0.0,0.0,-152.64796,0.98,8.89
+HERO.JK,Hero Supermarket,Consumer Cyclical,Department Stores,400.0,1673453633536,0.04856,72.62,0.0,22.222221,0.9585339,0.417,0.0
+KOIN.JK,Kokoh Inti Arebama,Industrials,Building Products & Equipment,78.0,76505808896,0.0,0.0,0.0,0.0,-0.81619835,0.0,-1.27
+SONA.JK,Sona Topas Tourism Industry,Consumer Cyclical,Travel Services,2220.0,1470527963136,0.12465,17.278,0.0,17.142857,2.0148335,1.221,-1.77
+RANC.JK,Supra Boga Lestari,Consumer Defensive,Grocery Stores,525.0,821355937792,-0.14097999,154.847,0.0,0.0,3.1188552,1.107,1.94
+TKMP.JK,Tigaraksa Satria,N/A,N/A,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+ASII.JK,Astra International,Industrials,Conglomerates,5600.0,224357364269056,0.13245,39.859,7.22,7.1323047,0.96387935,0.064,3.7
+AUTO.JK,Astra Otoparts,Consumer Cyclical,Auto Parts,2530.0,12193924907008,0.14193,3.318,8.95,5.4063296,0.7524058,0.096,-1.17
+GJTL.JK,Gajah Tunggal,Consumer Cyclical,Auto Parts,1200.0,4181350154240,0.12292,48.59,4.22,3.2889328,0.3998226,0.443,1.27
+SMSM.JK,Selamat Sempurna,Consumer Cyclical,Auto Parts,1750.0,10077682532352,0.27407,3.671,8.28,9.115533,2.6461868,0.0,3.55
+IMAS.JK,Indomobil Sukses Internasional,Consumer Cyclical,Auto & Truck Dealerships,945.0,3774604902400,0.01207,327.478,0.44,29.338715,0.27495566,0.0,3.85
+INDS.JK,Indospring,Consumer Cyclical,Auto Parts,300.0,1968749150208,0.0214,8.32,2.6,35.67182,0.5806661,2.203,-2.6
+MASA.JK,Multistrada Arah Sarana,N/A,N/A,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+BRAM.JK,Indo Kordsa,Consumer Cyclical,Textile Manufacturing,4560.0,2052259840000,0.00912,1.095,0.0,134.31517,9460.581,-0.011,-1.94
+SMGR.JK,Semen Indonesia,Basic Materials,Building Materials,1760.0,11854558527488,0.00438,21.137,1.61,51.673515,0.27222273,0.246,-0.28
+INTP.JK,Indocement Tunggal Prakarsa,Basic Materials,Building Materials,4900.0,16090248773632,0.09884,12.119,5.29,7.23589,0.69142926,0.387,0.0
+SMBR.JK,Semen Baturaja,Basic Materials,Building Materials,171.0,1698463481856,0.04158,15.206,2.1,12.223017,0.49769345,0.534,3.64
+WCID.JK,Wahana Cahaya Indonesia,N/A,N/A,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+ARNA.JK,Arwana Citramulia,Industrials,Building Products & Equipment,454.0,3191609491456,0.19254999,2.255,9.96,8.577366,1.6126052,0.126,0.44
+TOTO.JK,Surya Toto Indonesia,Industrials,Building Products & Equipment,254.0,2621280092160,0.1224,7.81,9.02,7.472786,1.0237148,0.037,4.1
+MARK.JK,Mark Dynamics Indonesia,Healthcare,Medical Instruments & Supplies,820.0,3116000083968,0.31034002,0.628,19.75,10.479233,3.172012,0.312,1.23
+CRBK.JK,Cipta Rasa Budimakmur Kencana,N/A,N/A,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+TPIA.JK,Chandra Asri Pacific,Basic Materials,Specialty Chemicals,1765.0,152658857951232,0.42368,117.023,0.3,4.719251,41046.51,0.283,-11.75
+BRPT.JK,Barito Pacific,Basic Materials,Chemicals,1480.0,138693385912320,0.34817,133.907,0.0,13.784111,61666.668,0.792,-7.79
+BUDI.JK,Budi Starch and Sweetener,Consumer Defensive,Packaged Foods,208.0,934185598976,0.07752,111.951,4.37,7.6442485,0.5918911,0.09,0.97
+EKAD.JK,Ekadharma International,Basic Materials,Specialty Chemicals,169.0,590464876544,0.04019,1.741,5.26,1.1553739,0.478412,0.021,-1.17
+SRSN.JK,Indo Acidatama,Basic Materials,Chemicals,65.0,391299989504,0.09991,13.575,1.43,4.054897,0.48319596,-0.004,0.0
+INCI.JK,Intanwijaya Internasional,Basic Materials,Specialty Chemicals,690.0,143283077120,0.057540003,0.412,5.07,8.198571,0.2939198,0.0,0.0
+DPNS.JK,Duta Pertiwi Nusantara,Basic Materials,Specialty Chemicals,310.0,102650281984,0.02467,0.0,1.61,4.298511,0.30319598,-0.041,0.0
+AGII.JK,Aneka Gas Industri,Basic Materials,Chemicals,2860.0,8770647752704,0.0234,102.55,0.31,105.73013,2.3134444,0.0,3.62
+ISSP.JK,Steel Technologies Indonesia,Basic Materials,Steel,424.0,2989826768896,0.09684,41.186,3.9,5.679078,0.5199296,0.299,3.41
+LION.JK,Lion Metal Works,Industrials,Business Equipment & Supplies,392.0,203902713856,-0.048639998,5.602,1.32,0.0,0.4443855,0.0,3.16
+LMSH.JK,Lionmesh Prima,Industrials,Metal Fabrication,256.0,24576000000,-0.051030003,0.0,0.0,12.194541,0.26804346,0.0,0.0
+KBLI.JK,KMI Wire and Cable,Industrials,Electrical Equipment & Parts,320.0,1282315255808,0.068670005,3.829,5.28,6.52928,0.45575866,0.098,-0.62
+SCCO.JK,Supreme Cable Manufacturing,Industrials,Electrical Equipment & Parts,2400.0,1973600518144,0.056009997,0.0,4.24,6.3008666,0.35160115,0.158,1.69
+VOKS.JK,Voksel Electric,Industrials,Electrical Equipment & Parts,210.0,872676589568,-0.097729996,147.338,0.0,0.0,1.5091085,0.0,-0.94
+JECC.JK,Jembo Cable Company,Industrials,Electrical Equipment & Parts,615.0,464940007424,0.13202,122.513,1.06,6.9783278,0.50695807,0.373,-9.56
+ALKA.JK,Alakasa Industrindo,Basic Materials,Aluminum,494.0,181554774016,0.07557,0.002,0.0,13.029832,1.073416,0.0,8.33
+PTSN.JK,Sat Nusapersada,Technology,Electronic Components,270.0,1434872840192,0.12694,21.293,1.93,5.17638,11250.0,0.478,0.0
+NIKL.JK,Pelat Timah Nusantara,Industrials,Metal Fabrication,268.0,676257792000,0.030469999,75.619,0.79,23.529411,12181.818,0.769,6.35
+MNCN.JK,Media Nusantara Citra,Communication Services,Advertising Agencies,208.0,2751249514496,0.05941,5.688,0.0,2.1686997,0.12598853,0.301,0.97
+SCMA.JK,Surya Citra Media,Communication Services,Broadcasting,230.0,14606081720320,0.113970004,0.234,12.27,15.796702,2.2349625,0.113,4.55
+EMTK.JK,Elang Mahkota Teknologi,Communication Services,Broadcasting,650.0,39768628920320,0.09003,4.509,5.76,14.090613,1.0779811,0.406,-1.52
+NETV.JK,Net Visi Media,Communication Services,Broadcasting,72.0,2977957412864,-0.52516,108.152,0.0,0.0,7.0747766,0.748,5.88
+MSIN.JK,MNC Studios International,Communication Services,Entertainment,494.0,29974031499264,0.15087,3.818,0.0,29.04174,4.4389334,0.603,-8.52
+KOPI.JK,Fanindo Cipta Propertindo,Energy,Oil & Gas Refining & Marketing,187.0,130388869120,0.01592,174.594,0.0,78.47252,1.8756646,0.524,-10.95
+DMMX.JK,Digital Mediatama Maxima,Communication Services,Advertising Agencies,178.0,1292179472384,0.08959,0.723,0.0,21.497585,1.8845551,0.047,1.71
+MCAS.JK,M Cash Integrasi,Industrials,Business Equipment & Supplies,264.0,228886740992,-0.05802,39.872,0.0,0.0,1.4586521,-0.284,0.76
+EDGE.JK,Indointernet,Technology,Information Technology Services,4790.0,9676997525504,0.06639,217.52,0.0,81.29668,5.206731,0.446,0.0
+MTDL.JK,Metrodata Electronics,Technology,Electronics & Computer Distribution,530.0,6506748575744,0.18726,33.353,4.4,8.030303,1.3357562,0.136,-2.75
+BFIN.JK,BFI Finance Indonesia,Financial Services,Credit Services,720.0,10619556200448,0.14156,119.872,9.79,7.1978407,0.96959245,0.566,0.7
+ADMF.JK,Adira Dinamika Multi Finance,Financial Services,Credit Services,8450.0,10359590092800,0.12307999,133.121,7.52,6.3376584,0.6648311,0.284,0.9
+CFIN.JK,Clipan Finance Indonesia,Financial Services,Credit Services,340.0,1354736992256,0.04062,59.748,14.88,5.726798,0.23176347,0.166,1.19
+HDFA.JK,Radana Bhaskara Finance,Financial Services,Credit Services,93.0,608447430656,-0.15611,528.808,0.0,0.0,1.2547898,0.0,3.33
+BBLD.JK,Buana Finance,Financial Services,Credit Services,620.0,1020393553920,0.00379,400.283,1.94,111.111115,0.72280616,0.038,0.0
+MFIN.JK,Mandala Multifinance,N/A,N/A,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+PNLF.JK,Panin Financial,Financial Services,Banks - Regional,240.0,7685297668096,0.057800002,0.0,0.0,3.6308625,0.24376124,-0.526,1.69
+WOMF.JK,Wahana Ottomitra Multiartha,Financial Services,Credit Services,288.0,1002666655744,0.07357,254.932,4.26,7.032967,0.5055869,0.288,0.0
+BIRD.JK,Blue Bird,Industrials,Railroads,1555.0,3890765365248,0.10444,35.953,7.29,6.2195024,0.6266942,0.228,0.32
+ASSA.JK,Adi Sarana Armada,Industrials,Rental & Leasing Services,670.0,2473062039552,0.18826,128.721,7.46,5.9666934,1.080227,0.431,0.0
+SMDR.JK,Samudera Indonesia,Industrials,Marine Shipping,306.0,5010933415936,0.09154,65.778,3.76,5.7271194,9272.728,0.0,0.0
+HITS.JK,Humpuss Intermoda Transportasi,Industrials,Marine Shipping,116.0,823725850624,0.00090000004,91.076,0.0,24.21712,12888.89,0.124,0.0
+TMAS.JK,Temas,Industrials,Marine Shipping,118.0,6710525165568,0.18056,55.75,3.17,11.811812,2.2283492,-0.122,0.0
+MBSS.JK,Mitrabahtera Segara Sejati,Industrials,Marine Shipping,2480.0,4340066025472,0.06601,5.443,0.0,17.143646,1.0985963,0.642,15.89
+RIGS.JK,Rig Tenders Indonesia,Industrials,Marine Shipping,685.0,417254047744,0.06875,0.572,0.0,4.8287044,9383.562,0.917,-0.72
+WEHA.JK,Weha Transportasi Indonesia,Industrials,Railroads,119.0,173806026752,0.09508,44.477,5.17,7.350216,0.6692387,-0.025,2.59
+TAXI.JK,Express Transindo Utama,Industrials,Railroads,15.0,153354698752,-0.40521,0.0,0.0,0.0,2.9411764,0.0,7.14
+SAFE.JK,Steady Safe,Industrials,Railroads,328.0,269356056576,1.5161301,18.42,0.0,5.9302115,4.2377806,0.694,1.23
+IPCM.JK,Jasa Armada Indonesia,Industrials,Marine Shipping,326.0,1722848509952,0.1468,4.075,7.6,8.700294,1.225905,-0.097,1.88
+CMPP.JK,Air Asia Indonesia,Industrials,Airlines,65.0,694533095424,0.0,0.0,0.0,0.0,-0.047687978,-0.003,-8.45
+ABDA.JK,Asuransi Bina Dana Arta,Financial Services,Insurance - Property & Casualty,3220.0,1998997422080,0.05856,0.0,0.0,19.032984,1.1230767,-0.116,-3.88
+ASDM.JK,Asuransi Dayin Mitra,Financial Services,Insurance - Diversified,505.0,193920008192,0.06404,0.0,9.9,10.74011,0.47350082,0.135,0.0
+ASRM.JK,Asuransi Ramayana,Financial Services,Insurance - Property & Casualty,276.0,352725794816,0.02537,18.042,0.0,18.486269,0.45603025,0.124,1.47
+MREI.JK,Maskapai Reasuransi Indonesia,Financial Services,Insurance - Reinsurance,985.0,510024810496,0.05815,0.0,1.54,5.532465,0.3117353,-0.065,1.03
+PNIN.JK,Panin Insurance,Financial Services,Insurance - Life,780.0,3173292703744,0.054330003,0.0,0.0,2.6373627,0.14188485,-0.235,1.96
+LPGI.JK,Lippo General Insurance,Financial Services,Insurance - Diversified,695.0,2085000052736,0.15008001,0.0,1.44,14.473136,2.0280957,0.125,0.0
+AHAP.JK,Asuransi Harta Aman Pratama,Financial Services,Insurance - Property & Casualty,88.0,431199977472,-0.11188,19.645,0.0,0.0,2.5036275,0.368,1.15
+LIFE.JK,Asuransi Jiwa Syariah Jasa Mitra Abadi,Financial Services,Insurance - Life,6250.0,13124999577600,0.03433,0.157,1.66,47.680805,1.722668,0.198,7.76
+SRTG.JK,Saratoga Investama Sedaya,Financial Services,Asset Management,1625.0,22018479095808,0.13229999,2.462,6.28,3.019997,0.3738884,0.334,-1.22
+MLPL.JK,Multipolar,Consumer Cyclical,Department Stores,87.0,1358362443776,-0.00982,47.99,0.0,0.0,0.22437948,0.418,1.16
+BHIT.JK,MNC Investama,Communication Services,Entertainment,30.0,2506282237952,0.03556,25.776,0.0,5.0933785,0.14909351,0.336,7.14
+DNET.JK,Indoritel Makmur Internasional,Communication Services,Telecom Services,9750.0,138293995896832,0.0866,44.022,0.05,108.03324,8.956647,0.256,2.63
+PNSE.JK,Pudjiadi and Sons,Consumer Cyclical,Resorts & Casinos,540.0,430819278848,-0.027420001,15.474,0.09,0.0,3.9589732,-0.127,1.89
+MYRX.JK,Hanson International,N/A,N/A,0.0,0,0.0,0.0,0.0,0.0,0.61428076,0.0,0.0
+IKAI.JK,Intikeramik Alamasri Industri,Industrials,Building Products & Equipment,20.0,266115989504,-0.09172,33.318,0.0,0.0,0.42552286,0.0,5.26
+KPIG.JK,MNC Land,Real Estate,Real Estate Services,96.0,9586325061632,0.026199998,19.043,0.0,12.598425,0.3329553,0.502,6.67
+RICY.JK,Ricky Putra Globalindo,Consumer Cyclical,Apparel Manufacturing,78.0,50053963776,-4.00083,492.026,0.0,0.0,0.1939324,0.444,-1.27
+SSTM.JK,Sunson Textile Manufacturer,Consumer Cyclical,Textile Manufacturing,520.0,608872759296,-0.09060001,0.0,0.0,13.205008,2.7193239,0.0,7.0
+POLU.JK,Golden Flower,Consumer Cyclical,Apparel Manufacturing,11175.0,8381250142208,-0.110530004,39.418,0.0,0.0,75.04483,-0.003,14.03
+UNIT.JK,Nusantara Inti Corpora,N/A,N/A,0.0,23833415680,0.0,0.0,0.0,69.741776,0.17648742,0.0,0.0
+TFCO.JK,Tifico Fiber Indonesia,Consumer Cyclical,Textile Manufacturing,600.0,2893845889024,-0.01648,0.383,0.0,0.0,9230.77,0.924,0.0
+CNTX.JK,Century Textile Industry,Consumer Cyclical,Textile Manufacturing,142.0,28400001024,0.0,0.0,0.0,0.0,-871.16565,0.0,0.0
+MLBI.JK,Multi Bintang Indonesia,Consumer Defensive,Beverages - Brewers,6050.0,12747350736896,0.78598,6.596,8.81,10.454106,8.035799,0.045,-1.63
+DLTA.JK,Delta Djakarta,Consumer Defensive,Beverages - Brewers,1955.0,1565288431616,0.18124,0.716,8.89,10.34118,1.968379,0.0,1.03
+SKBM.JK,Sekar Bumi,Consumer Defensive,Packaged Foods,575.0,994809348096,0.1146,59.608,0.0,8.582089,0.9975261,0.539,11.65
+SKLT.JK,Sekar Laut,Consumer Defensive,Packaged Foods,192.0,1197702774784,0.11632,38.456,4.28,10.909091,1.5189873,-0.104,2.67
+CLEO.JK,Sariguna Primatirta,Consumer Defensive,Beverages - Non-Alcoholic,390.0,9360000417792,0.17608999,17.606,0.64,24.148607,3.9513679,-0.358,-0.51
+KEJU.JK,Mulia Boga Raya,Consumer Defensive,Packaged Foods,565.0,3174856916992,0.21209,0.0,2.86,17.7005,3.7606995,-0.003,0.89
+PMMP.JK,Panca Mitra Multiperdana,Consumer Defensive,Packaged Foods,50.0,129415004160,0.0,0.0,0.0,12499.999,-2083.3333,-0.593,0.0
+PCAR.JK,Prima Cakrawala Abadi,Consumer Defensive,Packaged Foods,36.0,42000003072,-0.20319,32.977,0.0,0.0,0.638989,-0.518,2.86
+FASW.JK,Fajar Surya Wisesa,Consumer Cyclical,Packaging & Containers,5450.0,17555842400256,-0.19434,79.323,0.0,0.0,3.069461,0.199,0.0
+INKP.JK,Indah Kiat Pulp and Paper,Basic Materials,Paper & Paper Products,7850.0,42947219292160,0.06929,68.492,0.62,5.138578,6137.6074,0.411,-3.09
+TKIM.JK,Pabrik Kertas Tjiwi Kimia,Basic Materials,Paper & Paper Products,5575.0,17356221841408,0.08911,25.016,0.41,3.7673247,5880.802,0.581,-7.85
+SPMA.JK,Suparma,Basic Materials,Paper & Paper Products,212.0,869267275776,0.042179998,30.506,0.0,8.38276,0.3477468,0.587,4.95
+DAJK.JK,Dwi Aneka Jaya Kemasindo,N/A,N/A,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+AMFG.JK,Asahimas Flat Glass,Basic Materials,Building Materials,3130.0,1358419984384,0.00555,23.501,2.56,53.195107,0.29033998,0.249,0.0
+MLIA.JK,Mulia Industrindo,Industrials,Building Products & Equipment,250.0,1653749972992,-0.01461,16.239,2.8,0.0,0.30905595,-0.084,0.0
+KIAS.JK,Keramika Indonesia Assosiasi,Industrials,Building Products & Equipment,21.0,313511084032,-0.01485,3.011,0.0,0.0,0.44341215,0.0,0.0
+YPAS.JK,Yanaprima Hastapersada,Consumer Cyclical,Packaging & Containers,655.0,437540028416,0.073309995,86.331,0.0,48.698887,3.5441995,-0.386,10.08
+AKPI.JK,Argha Karya Prima Industry,Consumer Cyclical,Packaging & Containers,520.0,318368972800,0.01751,69.301,1.55,10.001924,0.17409967,0.165,-1.89
+IGAR.JK,Champion Pacific Indonesia,Consumer Cyclical,Packaging & Containers,450.0,417501282304,0.096820004,0.184,1.04,7.4013157,0.61250323,-0.023,0.0
