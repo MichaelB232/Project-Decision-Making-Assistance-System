@@ -2,19 +2,40 @@ import yfinance as yf
 import pandas as pd
 from core.idx_tickers import IDX_STOCKS
 import streamlit as st
+import os
 
 
 @st.cache_data(ttl=1800, show_spinner=False)
-def fetch_stock_data(tickerList=IDX_STOCKS):
+def fetch_stock_data(tickerList=list(IDX_STOCKS.keys())):
+    # Kalau CSV sudah ada, langsung baca — skip fetch
+    if os.path.exists("data.csv"):
+        return pd.read_csv("data.csv")
+
+    # Kalau belum ada, baru fetch dari yfinance
     all_data = []
-    try:
-        for ticker in tickerList:
+    for ticker in tickerList:
+        try:
             stock = yf.Ticker(ticker)
             info = stock.info
 
+            # Past24H: ambil dari history, bukan info
+            hist = stock.history(period="2d")
+            past_24h = (
+                round(
+                    (
+                        (hist["Close"].iloc[-1] - hist["Close"].iloc[-2])
+                        / hist["Close"].iloc[-2]
+                    )
+                    * 100,
+                    2,
+                )
+                if len(hist) >= 2
+                else 0
+            )
+
             data = {
                 "Ticker": ticker,
-                "Name": info.get("shortName", "N/A"),
+                "Name": IDX_STOCKS.get(ticker, info.get("shortName", "N/A")),
                 "Sector": info.get("sector", "N/A"),
                 "Industry": info.get("industry", "N/A"),
                 "Price": info.get("currentPrice", 0),
@@ -25,12 +46,16 @@ def fetch_stock_data(tickerList=IDX_STOCKS):
                 "PE_Ratio": info.get("trailingPE", 0),
                 "PBV": info.get("priceToBook", 0),
                 "Beta": info.get("beta", 0),
-                "Past24H": info.get("Close"),
+                "Past24H": past_24h,
             }
             all_data.append(data)
-    except Exception as e:
-        print(f"Failed to fetch data {ticker} : {e}")
-    return pd.DataFrame(all_data)
+
+        except Exception as e:
+            print(f"Failed to fetch {ticker}: {e}")
+
+    df = pd.DataFrame(all_data)
+    df.to_csv("data.csv", index=False)  # Simpan ke CSV
+    return df
 
 
 # asda
