@@ -22,7 +22,7 @@ def show_portofolio_management():
     )
 
     # ── STEP 1 : Pilih Saham ──────────────────────────────────────────────────
-    st.markdown("## 🏦 Step 1 — Pilih Saham")
+    st.markdown("## Step 1 — Pilih Saham")
     st.markdown("Pilih minimal **2** saham yang ingin dibandingkan (maksimal 10).")
 
     ticker_labels = {
@@ -79,7 +79,7 @@ def show_portofolio_management():
     st.divider()
 
     # ── STEP 2 : Bobot Kriteria (Pairwise Comparison) ────────────────────────
-    st.markdown("## ⚖️ Step 2 — Perbandingan Berpasangan Kriteria")
+    st.markdown("##  Step 2 — Perbandingan Berpasangan Kriteria")
     st.markdown(
         "Tentukan **seberapa penting** satu kriteria dibandingkan kriteria lainnya "
         "menggunakan Skala Saaty (1–9). Nilai **positif** → kriteria kiri lebih penting; "
@@ -148,7 +148,7 @@ def show_portofolio_management():
     weights, lam_max, ci, cr, is_consistent = ahp_weights(crit_matrix)
 
     # Tampilkan hasil bobot kriteria
-    st.markdown("### 📊 Hasil Bobot Kriteria")
+    st.markdown("###  Hasil Bobot Kriteria")
     cr_color, cr_label = gauge_cr(cr)
 
     col_cr, col_lam, col_ci = st.columns(3)
@@ -233,7 +233,7 @@ def show_portofolio_management():
     st.divider()
 
     # ── STEP 3 : Hitung & Tampilkan Ranking ──────────────────────────────────
-    st.markdown("## 🏆 Step 3 — Hasil Ranking Portofolio AHP")
+    st.markdown("## Step 3 — Hasil Ranking Portofolio AHP")
 
     with st.spinner("Menghitung skor AHP untuk tiap saham…"):
         df_scored = score_alternatives(df_raw, weights)
@@ -297,8 +297,8 @@ def show_portofolio_management():
     card_html += "</div>"
     st.markdown(card_html, unsafe_allow_html=True)
 
-    # ── Full Ranking Table ────────────────────────────────────────────────────
-    st.markdown("### 📋 Tabel Ranking Lengkap")
+    # ── Full Ranking Table ─────
+    st.markdown("###  Tabel Ranking Lengkap")
     display_cols = [
         "Rank",
         "Ticker",
@@ -331,7 +331,7 @@ def show_portofolio_management():
     st.dataframe(styled, use_container_width=True, hide_index=True)
 
     # ── Radar / Spider chart per saham ────────────────────────────────────────
-    st.markdown("### 🕸️ Radar Chart — Bobot Alternatif per Kriteria")
+    st.markdown("###  Radar Chart — Bobot Alternatif per Kriteria")
     crit_weight_cols = [f"w_{k}" for k in crit_keys]
     avail_radar = [c for c in crit_weight_cols if c in df_scored.columns]
 
@@ -377,7 +377,7 @@ def show_portofolio_management():
         st.plotly_chart(fig_radar, use_container_width=True)
 
     # ── Horizontal bar chart final score ─────────────────────────────────────
-    st.markdown("### 📊 Visualisasi Skor Akhir AHP")
+    st.markdown("### Visualisasi Skor Akhir AHP")
     df_bar = df_scored.copy()
     df_bar["TickerClean"] = df_bar["Ticker"].str.replace(".JK", "", regex=False)
     df_bar = df_bar.sort_values("AHP_Score")
@@ -418,7 +418,7 @@ def show_portofolio_management():
 
     # ── Alokasi Portofolio Rekomendasi ────────────────────────────────────────
     st.divider()
-    st.markdown("## 💰 Rekomendasi Alokasi Portofolio")
+    st.markdown("## Rekomendasi Alokasi Portofolio")
     st.markdown(
         "Alokasi dana proporsional berdasarkan skor AHP, hanya untuk saham dengan CR konsisten."
     )

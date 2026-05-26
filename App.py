@@ -4,7 +4,7 @@ from pages.portofolio_management import show_portofolio_management
 from pages.stock_explorer import show_stock_explorer
 
 
-# LOAD CSS
+# LOAD CSSs
 def load_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
